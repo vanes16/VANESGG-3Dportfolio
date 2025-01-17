@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
+import * as THREE from 'three'
 
 export function Miniavatar(props) {
   const group = useRef();
