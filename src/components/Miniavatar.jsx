@@ -6,18 +6,24 @@ export function Miniavatar(props) {
   const { nodes, materials } = useGLTF('/mini model/mini model.glb')
   const { animations } = useGLTF("/mini model/Poses.glb");
   const { actions } = useAnimations(animations, group);
-
+  
   useEffect(() => {
-    // Play a specific animation if it exists (change 'AnimationName' to the actual name of the animation you want to play)
-    if (actions['AnimationName']) {
-      actions['AnimationName'].play();
+    // Log all available animations to the console
+    console.log('Available animations:', Object.keys(actions));
+
+    // If there are animations available, play the first one
+    if (animations.length > 0) {
+      const firstAnimationName = Object.keys(actions)[0];
+      console.log(`Playing animation: ${firstAnimationName}`);
+      actions[firstAnimationName]?.play();
     }
 
     return () => {
-      // Clean up the animation when the component is unmounted
+      // Clean up and stop all animations
       Object.values(actions).forEach((action) => action.stop());
     };
-  }, [actions]);
+  }, [actions, animations]);
+
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
