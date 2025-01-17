@@ -1,10 +1,8 @@
-import { animated, useSpring } from "@react-spring/three";
 import {
   Environment,
   Float,
   Gltf,
   SoftShadows,
-  useProgress,
 } from "@react-three/drei";
 import { Miniavatar } from "./Miniavatar";
 import { LoadingAvatar } from "./LoadingAvatar";
