@@ -6,7 +6,7 @@ export const UI = () => {
       <div className="mx-auto h-full max-w-screen-xl w-full flex flex-col justify-between">
         <div className="flex justify-between items-center">
           <a className="pointer-events-auto" href="https://github.com/vanes16/VANESGG-3Dportfolio/">
-            <img className="w-20" src="/images/logo.png" />
+            <img className="w-40" src="/images/logo.png" />
           </a>
         </div>
         <div className="flex flex-col gap-6">
