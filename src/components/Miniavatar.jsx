@@ -9,29 +9,8 @@ export function Miniavatar(props) {
   const { actions } = useAnimations(animations, group);
   
   useEffect(() => {
-    // Log daftar nama animasi yang tersedia
-    console.log("Available animations:", Object.keys(actions));
-
-    // Jika ada animasi, mainkan animasi pertama yang ditemukan
-    if (Object.keys(actions).length > 0) {
-      const firstAnimationName = Object.keys(actions)[0];
-      console.log(`Memainkan animasi: ${firstAnimationName}`);
-
-      actions[firstAnimationName].play();
-      actions[firstAnimationName].setLoop(THREE.LoopRepeat, Infinity);  // Looping animasi
-
-      actions[firstAnimationName].onLoop = () => {
-        console.log(`${firstAnimationName} berulang...`);
-      };
-    } else {
-      console.log("Tidak ada animasi yang ditemukan.");
-    }
-
-    // Fungsi cleanup untuk menghentikan animasi saat komponen dibersihkan
-    return () => {
-      Object.values(actions).forEach((action) => action.stop());
-    };
-  }, [actions]);
+    actions["Idle"].play();
+  }, []);
   
   return (
     <group {...props} dispose={null}>
