@@ -4,7 +4,6 @@ import {
   SoftShadows,
 } from "@react-three/drei";
 import { Miniavatar } from "./Miniavatar";
-import { LoadingAvatar } from "./LoadingAvatar";
 
 export const Experience = () => {
   return (
