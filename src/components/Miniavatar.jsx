@@ -8,20 +8,16 @@ export function Miniavatar(props) {
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
-    if (animations && actions) {
-      // Play the first animation (or specify the animation you want)
-      const firstAnimation = actions[animations[0].name]; // Adjust to the animation's name if needed
-      if (firstAnimation) {
-        firstAnimation.fadeIn(0.2).play();
-      }
+    // Play a specific animation if it exists (change 'AnimationName' to the actual name of the animation you want to play)
+    if (actions['AnimationName']) {
+      actions['AnimationName'].play();
     }
+
     return () => {
-      if (actions) {
-        // Fade out the animation when component unmounts
-        actions.forEach(action => action.fadeOut(0.2).stop());
-      }
+      // Clean up the animation when the component is unmounted
+      Object.values(actions).forEach((action) => action.stop());
     };
-  }, [animations, actions]);
+  }, [actions]);
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
