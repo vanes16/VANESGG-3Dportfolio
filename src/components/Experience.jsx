@@ -5,6 +5,7 @@ import {
   SoftShadows,
 } from "@react-three/drei";
 import { Miniavatar } from "./Miniavatar";
+import { LoadingAvatar } from "./LoadingAvatar";
 
 export const Experience = () => {
   return (
@@ -41,6 +42,12 @@ export const Experience = () => {
         color={"#3cb1ff"}
       />
       <Miniavatar />
+      <Gltf
+        position-y={-0.31}
+        src="/models/Teleporter Base.glb"
+        castShadow
+        receiveShadow
+      />
     </>
   );
 };
