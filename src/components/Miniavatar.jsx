@@ -9,8 +9,12 @@ export function Miniavatar(props) {
   const { actions } = useAnimations(animations, group);
   
   useEffect(() => {
-    actions['mixamo.com'].play();
-  }, []);
+    actions[animation].reset().fadeIn(0.5).play();
+    return () => {
+      actions[animation].reset().fadeOut(0.5);
+    };
+  }, [animation]);
+
   
   return (
     <group {...props} dispose={null}>
