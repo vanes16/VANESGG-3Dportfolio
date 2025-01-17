@@ -6,8 +6,8 @@ import { Asset } from "./Asset";
 
 export const Miniavatar = ({ ...props }) => {
   const group = useRef();
-  const { nodes } = useGLTF("/mini models/mini model.glb");
-  const { animations } = useFBX("/mini models/Idle.fbx");
+  const { nodes } = useGLTF("/mini model/mini model.glb");
+  const { animations } = useFBX("/mini model/Idle.fbx");
   const customization = useConfiguratorStore((state) => state.customization);
   const { actions } = useAnimations(animations, group);
   const setDownload = useConfiguratorStore((state) => state.setDownload);
