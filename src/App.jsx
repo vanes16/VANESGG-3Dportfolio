@@ -2,14 +2,14 @@ import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience"; 
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { UI } from "./components/UI"; 
-import { Leva } from "leva";
 
 function App() {
   return (
     <>
-      <Leva hidden />
       <UI />
-      <Canvas shadows
+      <Canvas gl={{
+          preserveDrawingBuffer: true,
+        }} shadows
       >
         <color attach="background" args={["#130f30"]} />
         <fog attach="fog" args={["#130f30", 10, 40]} />
