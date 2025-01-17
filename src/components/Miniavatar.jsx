@@ -8,64 +8,90 @@ export function Miniavatar(props) {
   const { actions } = useAnimations(animations, group);
 
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
-        <group name="rig" rotation={[Math.PI / 2, 0, 0]}>
-          <group name="mini_model">
-            <skinnedMesh
-              name="mini_model_1"
-              geometry={nodes.mini_model_1.geometry}
-              material={materials['Material_0.001']}
-              skeleton={nodes.mini_model_1.skeleton}
-            />
-            <skinnedMesh
-              name="mini_model_2"
-              geometry={nodes.mini_model_2.geometry}
-              material={materials['InsideMouth.001']}
-              skeleton={nodes.mini_model_2.skeleton}
-            />
-            <skinnedMesh
-              name="mini_model_3"
-              geometry={nodes.mini_model_3.geometry}
-              material={materials['Teeth.001']}
-              skeleton={nodes.mini_model_3.skeleton}
-            />
-            <skinnedMesh
-              name="mini_model_4"
-              geometry={nodes.mini_model_4.geometry}
-              material={materials['Color_.003']}
-              skeleton={nodes.mini_model_4.skeleton}
-            />
-            <skinnedMesh
-              name="mini_model_5"
-              geometry={nodes.mini_model_5.geometry}
-              material={materials['BlackShiny.001']}
-              skeleton={nodes.mini_model_5.skeleton}
-            />
-            <skinnedMesh
-              name="mini_model_6"
-              geometry={nodes.mini_model_6.geometry}
-              material={materials['Color_.004']}
-              skeleton={nodes.mini_model_6.skeleton}
-            />
-            <skinnedMesh
-              name="mini_model_7"
-              geometry={nodes.mini_model_7.geometry}
-              material={materials['Color_.005']}
-              skeleton={nodes.mini_model_7.skeleton}
-            />
-            <skinnedMesh
-              name="mini_model_8"
-              geometry={nodes.mini_model_8.geometry}
-              material={materials['White.001']}
-              skeleton={nodes.mini_model_8.skeleton}
-            />
-          </group>
-          <primitive object={nodes.root} />
-        </group>
+    <group {...props} dispose={null}>
+      <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+        <primitive object={nodes.mixamorigHips} />
+        <skinnedMesh
+          name="mesh_0"
+          geometry={nodes.mesh_0.geometry}
+          material={nodes.mesh_0.material}
+          skeleton={nodes.mesh_0.skeleton}
+          morphTargetDictionary={nodes.mesh_0.morphTargetDictionary}
+          morphTargetInfluences={nodes.mesh_0.morphTargetInfluences}
+        />
+        <skinnedMesh
+          name="mesh_1"
+          geometry={nodes.mesh_1.geometry}
+          material={materials.InsideMouth}
+          skeleton={nodes.mesh_1.skeleton}
+          morphTargetDictionary={nodes.mesh_1.morphTargetDictionary}
+          morphTargetInfluences={nodes.mesh_1.morphTargetInfluences}
+        />
+        <skinnedMesh
+          name="mesh_2"
+          geometry={nodes.mesh_2.geometry}
+          material={materials.Teeth}
+          skeleton={nodes.mesh_2.skeleton}
+          morphTargetDictionary={nodes.mesh_2.morphTargetDictionary}
+          morphTargetInfluences={nodes.mesh_2.morphTargetInfluences}
+        />
+        <skinnedMesh
+          geometry={nodes.mesh_3.geometry}
+          material={materials.Color_}
+          skeleton={nodes.mesh_3.skeleton}
+        />
+        <skinnedMesh
+          name="mesh_4"
+          geometry={nodes.mesh_4.geometry}
+          material={materials.BlackShiny}
+          skeleton={nodes.mesh_4.skeleton}
+          morphTargetDictionary={nodes.mesh_4.morphTargetDictionary}
+          morphTargetInfluences={nodes.mesh_4.morphTargetInfluences}
+        />
+        <skinnedMesh
+          geometry={nodes.mesh_5.geometry}
+          material={materials.Color_}
+          skeleton={nodes.mesh_5.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.mesh_6.geometry}
+          material={nodes.mesh_6.material}
+          skeleton={nodes.mesh_6.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.mesh_7.geometry}
+          material={materials.Color_}
+          skeleton={nodes.mesh_7.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.mesh_8.geometry}
+          material={nodes.mesh_8.material}
+          skeleton={nodes.mesh_8.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.mesh_9.geometry}
+          material={materials.Color_}
+          skeleton={nodes.mesh_9.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.mesh_10.geometry}
+          material={nodes.mesh_10.material}
+          skeleton={nodes.mesh_10.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.mesh_11.geometry}
+          material={materials.White}
+          skeleton={nodes.mesh_11.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.mesh_12.geometry}
+          material={materials.Color_}
+          skeleton={nodes.mesh_12.skeleton}
+        />
       </group>
     </group>
   )
 }
+
 
 useGLTF.preload('mini model/mini model.glb')
