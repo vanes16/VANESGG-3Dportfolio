@@ -7,10 +7,6 @@ export function Miniavatar(props) {
   const { nodes, materials, animations} = useGLTF('/mini model/mini model.glb')
   const { actions } = useAnimations(animations, group);
 
-  useEffect(() => {
-    actions["Idle"].play();
-  }, []);
-  
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
