@@ -8,11 +8,6 @@ export function Miniavatar(props) {
   const { animations } = useFBX('/mini model/Idle.fbx');
   const { actions } = useAnimations(animations, group);
   
-  useEffect(() => {
-    actions['Maximo.com'].play();
-  }, []);
-
-  
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
