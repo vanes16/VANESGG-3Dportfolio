@@ -2,10 +2,10 @@ import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { Suspense, useEffect, useRef } from "react";
 import { GLTFExporter } from "three-stdlib";
 
-export const Avatar = ({ ...props }) => {
+export const Miniavatar = ({ ...props }) => {
   const group = useRef();
-  const { nodes } = useGLTF("/models/Armature.glb");
-  const { animations } = useFBX("/models/Idle.fbx");
+  const { nodes } = useGLTF("/mini model/mini model.glb");
+  const { animations } = useFBX("/mini model/Idle.fbx");
   const { actions } = useAnimations(animations, group);
   
   return (
