@@ -32,11 +32,14 @@ export const Experience = () => {
         shadow-mapSize-height={2048}
         shadow-bias={-0.0001}
       />
-      {/* Fill Light */}
       <directionalLight position={[-5, 5, 5]} intensity={0.7} />
       {/* Back Lights */}
-      <directionalLight position={[1, 0.1, -5]} intensity={3} color={"red"} />
-      <directionalLight position={[-1, 0.1, -5]} intensity={8} color={"blue"} />
+      <directionalLight position={[3, 3, -5]} intensity={6} color={"#ff3b3b"} />
+      <directionalLight
+        position={[-3, 3, -5]}
+        intensity={8}
+        color={"#3cb1ff"}
+      />
       <Miniavatar />
     </>
   );
