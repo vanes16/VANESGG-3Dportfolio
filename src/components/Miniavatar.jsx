@@ -16,4 +16,5 @@ export const Miniavatar = ({ ...props }) => {
         </group>
       </group>
     </group>
-  );
+  )
+}
