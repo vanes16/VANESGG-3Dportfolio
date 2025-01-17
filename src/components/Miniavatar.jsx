@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Miniavatar(props) {
-  const { nodes, materials } = useGLTF('Mini model/mini model.glb')
+  const { nodes, materials } = useGLTF('mini model/mini model.glb')
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
@@ -89,4 +89,4 @@ export function Miniavatar(props) {
   )
 }
 
-useGLTF.preload('Mini model/mini model.glb')
+useGLTF.preload('mini model/mini model.glb')
