@@ -12,7 +12,7 @@ export function Miniavatar(props) {
     const actionKeys = Object.keys(actions);
     console.log(animations); // Cek daftar animasi
     console.log(actions); 
-    actions[actionKeys[0]].play();
+    actions["Idle"].play();
 
   }, []);
   
