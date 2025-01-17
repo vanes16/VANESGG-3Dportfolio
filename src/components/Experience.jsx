@@ -46,7 +46,7 @@ export const Experience = () => {
       <Miniavatar />
       <Gltf
         position-y={-0.31}
-        src="/models/Teleporter Base.glb"
+        src="/teleporter base/Teleporter Base.glb"
         castShadow
         receiveShadow
       />
