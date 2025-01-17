@@ -1,5 +1,4 @@
 import { Canvas } from "@react-three/fiber";
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { Experience } from "./components/Experience"; 
 import { UI } from "./components/UI"; 
 
@@ -19,9 +18,6 @@ function App() {
         <group position-y={-1}>
           <Experience /> 
         </group> 
-        <EffectComposer>
-          <Bloom mipmapBlur luminanceThreshold={1.2} intensity={1.2} />
-        </EffectComposer>
       </Canvas>
     </>
   );
