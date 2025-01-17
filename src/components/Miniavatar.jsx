@@ -15,12 +15,10 @@ export const Miniavatar = ({ ...props }) => {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+        <group name="Mini model" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <primitive object={nodes.mixamorigHips} />
         </group>
       </group>
     </group>
   );
 };
-
-useGLTF.preload('mini model/Mini model.glb')
