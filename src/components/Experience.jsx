@@ -1,71 +1,43 @@
-import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
-import { Suspense, useEffect, useRef } from "react";
-import { GLTFExporter } from "three-stdlib";
-import { pb, useConfiguratorStore } from "../store";
-import { Asset } from "./Asset";
+import {
+  Backdrop,
+  Environment,
+  OrbitControls,
+  SoftShadows,
+} from "@react-three/drei";
+import { Miniavatar } from "./Miniavatar";
 
-export const Avatar = ({ ...props }) => {
-  const group = useRef();
-  const { nodes } = useGLTF("/mini model/mini model.glb");
-  const { animations } = useFBX("/mini model/Idle.fbx");
-  const customization = useConfiguratorStore((state) => state.customization);
-  const { actions } = useAnimations(animations, group);
-  const setDownload = useConfiguratorStore((state) => state.setDownload);
-
-  useEffect(() => {
-    function download() {
-      const exporter = new GLTFExporter();
-      exporter.parse(
-        group.current,
-        function (result) {
-          save(
-            new Blob([result], { type: "application/octet-stream" }),
-            `avatar_${+new Date()}.glb`
-          );
-        },
-        function (error) {
-          console.error(error);
-        },
-        { binary: true }
-      );
-    }
-
-    const link = document.createElement("a");
-    link.style.display = "none";
-    document.body.appendChild(link); // Firefox workaround, see #6594
-
-    function save(blob, filename) {
-      link.href = URL.createObjectURL(blob);
-      link.download = filename;
-      link.click();
-    }
-    setDownload(download);
-  }, []);
-
-  useEffect(() => {
-    actions["mixamo.com"]?.play();
-  }, [actions]);
+export const Experience = () => {
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
-        <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
-          <primitive object={nodes.mixamorigHips} />
-          {Object.keys(customization).map(
-            (key) =>
-              customization[key]?.asset?.url && (
-                <Suspense key={customization[key].asset.id}>
-                  <Asset
-                    url={pb.files.getUrl(
-                      customization[key].asset,
-                      customization[key].asset.url
-                    )}
-                    skeleton={nodes.Plane.skeleton}
-                  />
-                </Suspense>
-              )
-          )}
-        </group>
-      </group>
-    </group>
+    <>
+      <OrbitControls
+        minPolarAngle={Math.PI / 4}
+        maxPolarAngle={Math.PI / 2}
+        minAzimuthAngle={-Math.PI / 4}
+        maxAzimuthAngle={Math.PI / 4}
+      />
+      <Environment preset="sunset" environmentIntensity={0.3} />
+
+      <Backdrop scale={[50, 10, 5]} floor={1.5} receiveShadow position-z={-4}>
+        <meshStandardMaterial color="#555" />
+      </Backdrop>
+
+      <SoftShadows size={52} samples={16} />
+
+      {/* Key Light */}
+      <directionalLight
+        position={[5, 5, 5]}
+        intensity={2.2}
+        castShadow
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+        shadow-bias={-0.0001}
+      />
+      {/* Fill Light */}
+      <directionalLight position={[-5, 5, 5]} intensity={0.7} />
+      {/* Back Lights */}
+      <directionalLight position={[1, 0.1, -5]} intensity={3} color={"red"} />
+      <directionalLight position={[-1, 0.1, -5]} intensity={8} color={"blue"} />
+      <Miniavatar />
+    </>
   );
 };
