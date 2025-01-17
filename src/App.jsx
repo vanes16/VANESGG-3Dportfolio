@@ -1,11 +1,11 @@
 import { Canvas } from "@react-three/fiber";
 /*import { Experience } from "./components/Experience"; */ 
-/*import { UI } from "./components/UI";*/ 
+import { UI } from "./components/UI"; 
 
 function App() {
   return (
     <>
-      /*<UI />*/ 
+      <UI /> 
       <Canvas
         camera={{
           position: [-1, 1, 5],
