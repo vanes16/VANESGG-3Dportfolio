@@ -1,5 +1,7 @@
 import {
+  Backdrop,
   Environment,
+  Gltf,
   Float,
   SoftShadows,
 } from "@react-three/drei";
@@ -40,7 +42,12 @@ export const Experience = () => {
         color={"#3cb1ff"}
       />
       <Miniavatar />
-
+      <Gltf
+        position-y={-0.31}
+        src="/teleporter base/Teleporter Base.glb"
+        castShadow
+        receiveShadow
+      />
     </>
   );
 };
