@@ -1,5 +1,5 @@
 import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
-import { Suspense, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { GLTFExporter } from "three-stdlib";
 
 export const Miniavatar = ({ ...props }) => {
@@ -7,7 +7,10 @@ export const Miniavatar = ({ ...props }) => {
   const { nodes } = useGLTF("/mini model/mini model.glb");
   const { animations } = useFBX("/mini model/Idle.fbx");
   const { actions } = useAnimations(animations, group);
-  
+
+  useEffect(() => {
+    actions["mixamo.com"]?.play();
+  }, [actions]);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
