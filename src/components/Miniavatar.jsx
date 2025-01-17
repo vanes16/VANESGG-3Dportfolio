@@ -5,7 +5,7 @@ import * as THREE from 'three'
 export function Miniavatar(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF('/mini model/mini model.glb')
-  const { animations } = useGLTF('/mini model/Poses.glb');
+  const { animations } = useFBX('/mini model/Idle.fbx');
   const { actions } = useAnimations(animations, group);
   
   useEffect(() => {
