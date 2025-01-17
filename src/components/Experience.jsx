@@ -1,7 +1,6 @@
 import {
   Environment,
   Float,
-  Gltf,
   SoftShadows,
 } from "@react-three/drei";
 import { Miniavatar } from "./Miniavatar";
