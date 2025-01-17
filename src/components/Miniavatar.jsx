@@ -9,11 +9,8 @@ export function Miniavatar(props) {
   const { actions } = useAnimations(animations, group);
   
   useEffect(() => {
-    actions['Maximo.com'].reset().fadeIn(0.5).play();
-    return () => {
-      actions['Maximo.com'].reset().fadeOut(0.5);
-    };
-  }, ['Maximo.com']);
+    actions['Maximo.com'].play();
+  }, []);
 
   
   return (
