@@ -4,7 +4,7 @@ import { GLTFExporter } from "three-stdlib";
 import { pb, useConfiguratorStore } from "../store";
 import { Asset } from "./Asset";
 
-export const Avatar = ({ ...props }) => {
+export const Miniavatar = ({ ...props }) => {
   const group = useRef();
   const { nodes } = useGLTF("/mini models/mini model.glb");
   const { animations } = useFBX("/mini models/Idle.fbx");
