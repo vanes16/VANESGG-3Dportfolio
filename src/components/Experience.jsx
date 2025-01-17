@@ -1,8 +1,10 @@
+import { animated, useSpring } from "@react-spring/three";
 import {
-  Backdrop,
   Environment,
-  OrbitControls,
+  Float,
+  Gltf,
   SoftShadows,
+  useProgress,
 } from "@react-three/drei";
 import { Miniavatar } from "./Miniavatar";
 import { LoadingAvatar } from "./LoadingAvatar";
