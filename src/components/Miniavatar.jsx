@@ -4,7 +4,7 @@ import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
 export function Miniavatar(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF('/mini model/mini model.glb')
-  const { animations } = useFBX("/mini model/Poses.glb");
+  const { animations } = useGLTF("/mini model/Poses.glb");
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
