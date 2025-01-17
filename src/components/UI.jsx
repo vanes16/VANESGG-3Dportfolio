@@ -1,41 +1,5 @@
 import { useEffect } from "react";
 
-  return (
-    <div className="rounded-2xl bg-white drop-shadow-md p-6 gap-6 flex flex-col">
-      <div className="flex items-center gap-6 pointer-events-auto">
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            onClick={() => setCurrentCategory(category)}
-            className={`transition-colors duration-200 font-medium ${
-              currentCategory.name === category.name
-                ? "text-indigo-500"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-          >
-            {category.name}
-          </button>
-        ))}
-      </div>
-      <div className="flex gap-2 flex-wrap">
-        {currentCategory?.assets.map((asset) => (
-          <button
-            key={asset.thumbnail}
-            onClick={() => changeAsset(currentCategory.name, asset)}
-            className={`w-20 h-20 rounded-md overflow-hidden bg-gray-200 pointer-events-auto hover:opacity-100 transition-all border-2 duration-500
-              ${
-                customization[currentCategory.name]?.asset?.id === asset.id
-                  ? "border-indigo-600 opacity-100"
-                  : "opacity-80 border-transparent"
-              }`}
-          >
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-};
-
 export const UI = () => {
   return (
     <main className="pointer-events-none fixed z-10 inset-0 p-10">
