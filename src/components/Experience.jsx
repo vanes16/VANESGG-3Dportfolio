@@ -1,7 +1,7 @@
 import {
   Backdrop,
   Environment,
-  Float,
+  OrbitControls,
   SoftShadows,
 } from "@react-three/drei";
 import { Miniavatar } from "./Miniavatar";
