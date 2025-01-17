@@ -8,22 +8,14 @@ export function Miniavatar(props) {
   const { actions } = useAnimations(animations, group);
   
   useEffect(() => {
-    // Log all available animations to the console
-    console.log('Available animations:', Object.keys(actions));
-
-    // If there are animations available, play the first one
-    if (animations.length > 0) {
-      const firstAnimationName = Object.keys(actions)[0];
-      console.log(`Playing animation: ${firstAnimationName}`);
-      actions[firstAnimationName]?.play();
+    if (actions['Idle']) {
+      actions['Idle'].play();
     }
 
     return () => {
-      // Clean up and stop all animations
       Object.values(actions).forEach((action) => action.stop());
     };
-  }, [actions, animations]);
-
+  }, [actions]);
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
