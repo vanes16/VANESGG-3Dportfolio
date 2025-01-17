@@ -5,11 +5,14 @@ import * as THREE from 'three'
 export function Miniavatar(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF('/mini model/mini model.glb')
-  const { animations } = useGLTF("/mini model/Poses.glb");
+  const { animations } = useGLTF('/mini model/Poses.glb');
   const { actions } = useAnimations(animations, group);
   
   useEffect(() => {
+    console.log(animations); // Cek daftar animasi
+    console.log(actions); 
     actions["Idle"].play();
+
   }, []);
   
   return (
