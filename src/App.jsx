@@ -13,10 +13,10 @@ function App() {
         }}
         shadows
       >
-        <color attach="background" args={["#130f30"]} />
-        <fog attach="fog" args={["#130f30", 10, 40]} />
+        <color attach="background" args={["#555"]} />
+        <fog attach="fog" args={["#555", 15, 25]} />
         <group position-y={-1}>
-           <Experience />
+          <Experience /> 
         </group> 
       </Canvas>
     </>
