@@ -9,9 +9,10 @@ export function Miniavatar(props) {
   const { actions } = useAnimations(animations, group);
   
   useEffect(() => {
+    const actionKeys = Object.keys(actions);
     console.log(animations); // Cek daftar animasi
     console.log(actions); 
-    actions["Idle"].play();
+    actions[actionKeys[0]].play();
 
   }, []);
   
