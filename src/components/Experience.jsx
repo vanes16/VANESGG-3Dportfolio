@@ -4,7 +4,7 @@ import {
   OrbitControls,
   SoftShadows,
 } from "@react-three/drei";
-import { Avatar } from "./Avatar";
+import { Miniavatar } from "./Miniavatar";
 
 export const Experience = () => {
   return (
@@ -37,7 +37,7 @@ export const Experience = () => {
       {/* Back Lights */}
       <directionalLight position={[1, 0.1, -5]} intensity={3} color={"red"} />
       <directionalLight position={[-1, 0.1, -5]} intensity={8} color={"blue"} />
-      <Avatar />
+      <Miniavatar />
     </>
   );
 };
