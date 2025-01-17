@@ -1,8 +1,14 @@
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef, useEffect } from 'react'
+import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
 
 export function Miniavatar(props) {
-  const { nodes, materials } = useGLTF('mini model/mini model.glb')
+  const group = useRef();
+  const { nodes, materials } = useGLTF('/mini model/mini model.glb')
+  const { animations } = useFBX("/mini model/Idle.fbx");
+  const { actions } = useAnimations(animations, group);
+  useEffect(() => {
+    actions["mixamo.com"]?.play();
+  }, [actions]);
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
