@@ -4,6 +4,7 @@ import {useAnimations, useFBX, useGLTF } from '@react-three/drei'
 export function Miniavatar(props) {
   const { nodes, materials } = useGLTF('mini model/mini model.glb')
   const { animations } = useFBX("/models/Idle.fbx");
+  const { actions } = useAnimations(animations, group);
   useEffect(() => {
     actions["mixamo.com"]?.play();
   }, [actions]);
