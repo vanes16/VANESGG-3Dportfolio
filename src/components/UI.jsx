@@ -1,19 +1,5 @@
 import { useEffect } from "react";
-import { pb, useConfiguratorStore } from "../store";
 
-const AssetsBox = () => {
-  const {
-    categories,
-    currentCategory,
-    fetchCategories,
-    setCurrentCategory,
-    changeAsset,
-    customization,
-  } = useConfiguratorStore();
-
-  useEffect(() => {
-    fetchCategories();
-  }, []);
   return (
     <div className="rounded-2xl bg-white drop-shadow-md p-6 gap-6 flex flex-col">
       <div className="flex items-center gap-6 pointer-events-auto">
@@ -43,23 +29,10 @@ const AssetsBox = () => {
                   : "opacity-80 border-transparent"
               }`}
           >
-            <img src={pb.files.getUrl(asset, asset.thumbnail)} />
           </button>
         ))}
       </div>
     </div>
-  );
-};
-
-const DownloadButton = () => {
-  const download = useConfiguratorStore((state) => state.download);
-  return (
-    <button
-      className="rounded-lg bg-indigo-500 hover:bg-indigo-600 transition-colors duration-300 text-white font-medium px-4 py-3 pointer-events-auto"
-      onClick={download}
-    >
-      Download
-    </button>
   );
 };
 
@@ -74,10 +47,8 @@ export const UI = () => {
           >
             <img className="w-20" src="/images/wawasensei-white.png" />
           </a>
-          <DownloadButton />
         </div>
         <div className="flex flex-col gap-6">
-          <AssetsBox />
         </div>
       </div>
     </main>
