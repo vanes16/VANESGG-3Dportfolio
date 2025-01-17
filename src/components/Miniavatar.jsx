@@ -9,26 +9,30 @@ export function Miniavatar(props) {
   const { actions } = useAnimations(animations, group);
   
   useEffect(() => {
-    // Cek jika animasi 'Idle' ada
-    if (actions['Idle']) {
-      // Mulai animasi dan set loop berulang
-      actions['Idle'].play();
-      actions['Idle'].setLoop(THREE.LoopRepeat, Infinity);  // Looping selamanya
+    // Log daftar nama animasi yang tersedia
+    console.log("Available animations:", Object.keys(actions));
 
-      // Log status animasi saat dimainkan
-      console.log('Animasi "Idle" dimulai dan berulang...');
+    // Jika ada animasi, mainkan animasi pertama yang ditemukan
+    if (Object.keys(actions).length > 0) {
+      const firstAnimationName = Object.keys(actions)[0];
+      console.log(`Memainkan animasi: ${firstAnimationName}`);
 
-      // Jika animasi selesai atau loop, log di console
-      actions['Idle'].onLoop = () => {
-        console.log('Animasi "Idle" berulang...');
+      actions[firstAnimationName].play();
+      actions[firstAnimationName].setLoop(THREE.LoopRepeat, Infinity);  // Looping animasi
+
+      actions[firstAnimationName].onLoop = () => {
+        console.log(`${firstAnimationName} berulang...`);
       };
+    } else {
+      console.log("Tidak ada animasi yang ditemukan.");
     }
 
-    // Fungsi cleanup: berhenti dari animasi saat komponen dibersihkan
+    // Fungsi cleanup untuk menghentikan animasi saat komponen dibersihkan
     return () => {
       Object.values(actions).forEach((action) => action.stop());
     };
   }, [actions]);
+  
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
