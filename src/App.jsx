@@ -13,7 +13,7 @@ function App() {
         }}
         shadows
       >
-        <color attach="background" args={["#155"]} />
+        <color attach="background" args={["#555"]} />
         <fog attach="fog" args={["#555", 15, 25]} />
         <group position-y={-1}>
           <Experience /> 
