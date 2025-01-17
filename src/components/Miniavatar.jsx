@@ -4,7 +4,7 @@ import * as THREE from 'three'
 
 export function Miniavatar(props) {
   const group = useRef();
-  const { nodes, materials } = useGLTF('/mini model/Mini model.glb')
+  const { nodes, materials } = useGLTF('/mini model/mini model.glb')
   const { animations } = useGLTF('/mini model/Poses.glb');
   const { actions } = useAnimations(animations, group);
   
@@ -102,4 +102,4 @@ export function Miniavatar(props) {
   )
 }
 
-useGLTF.preload('mini model/Mini model.glb')
+useGLTF.preload('mini model/mini model.glb')
