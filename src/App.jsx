@@ -9,11 +9,7 @@ function App() {
     <>
       <Leva hidden />
       <UI />
-      <Canvas
-        gl={{
-          preserveDrawingBuffer: true,
-        }}
-        shadows
+      <Canvas shadows
       >
         <color attach="background" args={["#130f30"]} />
         <fog attach="fog" args={["#130f30", 10, 40]} />
