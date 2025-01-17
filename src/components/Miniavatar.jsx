@@ -22,3 +22,5 @@ export const Miniavatar = ({ ...props }) => {
     </group>
   );
 };
+
+useGLTF.preload('mini model/Mini model.glb')
