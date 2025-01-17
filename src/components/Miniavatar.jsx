@@ -8,10 +8,22 @@ export function Miniavatar(props) {
   const { actions } = useAnimations(animations, group);
   
   useEffect(() => {
+    // Cek jika animasi 'Idle' ada
     if (actions['Idle']) {
+      // Mulai animasi dan set loop berulang
       actions['Idle'].play();
+      actions['Idle'].setLoop(THREE.LoopRepeat, Infinity);  // Looping selamanya
+
+      // Log status animasi saat dimainkan
+      console.log('Animasi "Idle" dimulai dan berulang...');
+
+      // Jika animasi selesai atau loop, log di console
+      actions['Idle'].onLoop = () => {
+        console.log('Animasi "Idle" berulang...');
+      };
     }
 
+    // Fungsi cleanup: berhenti dari animasi saat komponen dibersihkan
     return () => {
       Object.values(actions).forEach((action) => action.stop());
     };
