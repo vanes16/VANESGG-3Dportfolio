@@ -4,10 +4,12 @@ import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
 export function Miniavatar(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF('/mini model/mini model.glb')
-  const { animations } = useFBX("/mini model/Idle.fbx");
+  const { animations } = useFBX("/mini model/Poses.fbx");
   const { actions } = useAnimations(animations, group);
+
   useEffect(() => {
-    actions["mixamo.com"]?.play();
+    actions[animations]?.fadeIn(0.2).play();
+    return () => actions[animations]?.fadeOut(0.2).stop();
   }, [actions]);
   return (
     <group {...props} dispose={null}>
