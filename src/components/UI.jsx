@@ -13,6 +13,7 @@ export const UI = () => {
           className="w-40 animate-pulse"
         />
       </div>
+      
       <div className="mx-auto h-full max-w-screen-xl w-full flex flex-col justify-between">
         <div className="flex justify-between items-center">
           <a className="pointer-events-auto" href="https://github.com/vanes16/VANESGG-3Dportfolio/">
