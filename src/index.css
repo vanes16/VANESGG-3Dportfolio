@@ -6,7 +6,7 @@
 
 html,
 body {
-  background: black;
+  background: linear-gradient(to bottom, #ffffff, #e0ffff);
 }
 
 #root {

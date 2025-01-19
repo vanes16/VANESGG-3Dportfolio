@@ -3,10 +3,15 @@ import {
   Environment,
   OrbitControls,
   SoftShadows,
+  useTexture,
 } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
 import { Miniavatar } from "./Miniavatar";
+import { Avatar } from "./Avatar";
 
 export const Experience = () => {
+  const texture = useTexture("/images/background.jpeg");
+  const viewport = useThree((state) => state.viewport);
   return (
     <>
       <OrbitControls
@@ -15,7 +20,6 @@ export const Experience = () => {
         minAzimuthAngle={-Math.PI / 4}
         maxAzimuthAngle={Math.PI / 4}
       />
-      <Environment preset="sunset" environmentIntensity={0.3} />
 
       <Backdrop scale={[50, 10, 5]} floor={1.5} receiveShadow position-z={-4}>
         <meshStandardMaterial color="#555" />
@@ -40,7 +44,8 @@ export const Experience = () => {
         intensity={8}
         color={"#3cb1ff"}
       />
-      <Miniavatar />
+      <Avatar position={[0, 0, 0]} />
+      <Environment preset="sunset" environmentIntensity={0.3} />
     </>
   );
 };
