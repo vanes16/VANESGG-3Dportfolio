@@ -1,7 +1,8 @@
 import { Canvas } from "@react-three/fiber";
-import { UI } from "./components/UI";
+import { Header } from "./components/Header";
 import { Experience } from "./components/Experience";
-import { useEffect, useState } from "react";
+import { Avatar } from "./components/Avatar";
+import { useEffect, useState, Suspense } from "react";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -29,20 +30,22 @@ function App() {
       {/* Main Application */}
       {!loading && (
         <>
-          <UI />
-          <Canvas
-            camera={{
-              position: [-1, 1, 5],
-              fov: 45,
-            }}
-            shadows
-          >
-            <color attach="#E0FFFF" args={["#130f30"]} />
-            <fog attach="fog" args={["#130f30", 10, 40]} />
-            <group position-y={-1}>
-              <Experience />
-            </group>
-          </Canvas>
+          <Header />
+          <div className="flex flex-col h-full w-[100%]">
+            <div className="flex-grow h-[950px] p-8 mt-16 mb-2">
+              <div className="rounded-xl h-[90%] overflow-hidden">
+                <Canvas shadows camera={{ position: [0, 0, 8], fov: 42 }}>
+                  <color attach="#E0FFFF" args={["#130f30"]} />
+                  <group position-y={-1}>
+                    <Suspense fallback={null}>
+                      <Experience />
+                    </Suspense>
+                  </group>
+                </Canvas>
+              </div>
+            </div>
+            <h1>TEST</h1>
+          </div>
         </>
       )}
     </>
