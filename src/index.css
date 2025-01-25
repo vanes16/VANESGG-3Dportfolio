@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, dan Edge */
+}
+
 html,
 body {
   background: linear-gradient(to bottom, #ffffff, #e0ffff);

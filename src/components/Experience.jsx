@@ -12,6 +12,7 @@ import { Avatar } from "./Avatar";
 export const Experience = () => {
   const texture = useTexture("/images/background.jpeg");
   const viewport = useThree((state) => state.viewport);
+
   return (
     <>
       <OrbitControls
@@ -19,6 +20,7 @@ export const Experience = () => {
         maxPolarAngle={Math.PI / 2}
         minAzimuthAngle={-Math.PI / 4}
         maxAzimuthAngle={Math.PI / 4}
+        enableZoom={false}
       />
 
       <Backdrop scale={[50, 10, 5]} floor={1.5} receiveShadow position-z={-4}>
