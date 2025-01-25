@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import { useEffect, useRef, useState } from "react";
 
 export const Header = () => {
@@ -8,6 +9,8 @@ export const Header = () => {
   const audioRef = useRef(null);
   const hamburgerAudioBefore = useRef(null);
   const hamburgerAudioAfter = useRef(null);
+  const linkAudio = useRef(null);
+  const [activeSection, setActiveSection] = useState("");
 
   const toggleSound = () => {
     setIsMuted((prevState) => {
@@ -56,29 +59,10 @@ export const Header = () => {
     });
   };
 
-  const handleScroll = () => {
-    if (window.scrollY > window.innerHeight) {
-      setIsFixed(true);
-    } else {
-      setIsFixed(false);
-    }
-
-    if (window.scrollY > 50) {
-      setIsHeaderVisible(false);
-    } else {
-      setIsHeaderVisible(true);
-    }
-
-    // Close menu if it's open and a scroll happens
-    if (!beforeHamburger) {
-      afterHamburger(true);
-    }
-  };
-
   const SoundButton = () => {
     return (
       <button
-        className={`z-50 text-4xl rounded-2xl transition-colors duration-300 
+        className={`text-4xl rounded-2xl transition-colors duration-300 
         text-white pointer-events-auto drop-shadow-md w-16 h-16 ${
           isMuted ? "bg-[#b9bbbe] hover:bg-[#caccce]" : "bg-[#34d2f0]"
         }`}
@@ -92,7 +76,7 @@ export const Header = () => {
   const HamburgerButton = () => {
     return (
       <button
-        className="z-50 text-4xl rounded-2xl transition-colors duration-300 
+        className="text-4xl rounded-2xl transition-colors duration-300 
         text-white pointer-events-auto drop-shadow-md w-16 h-16 bg-[#34d2f0]"
         onClick={toggleHamburger}
       >
@@ -105,37 +89,100 @@ export const Header = () => {
     );
   };
 
-  const MenuButton = (props) => {
-    const { label, onClick } = props;
+  const MenuButton = ({ label, to }) => {
+    const linkClick = () => {
+      if (!isMuted) {
+        linkAudio.current.currentTime = 0;
+        linkAudio.current.play();
+      }
+    };
     return (
-      <button
-        onClick={onClick}
-        className="text-3xl font-semibold cursor-pointer hover:text-indigo-600 transition-colors"
+      <Link
+        to={to}
+        smooth={true}
+        duration={500}
+        className={`text-3xl font-semibold cursor-pointer hover:text-indigo-600 transition-colors ${
+          activeSection === to ? "border-b-4 border-[#34d2f0]" : ""
+        }`}
         style={{ color: "#091434" }}
+        onClick={linkClick}
+        onSetActive={() => setActiveSection(to)}
       >
         {label}
-      </button>
+      </Link>
     );
   };
 
+  let lastScrollY = 0;
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+
+    setIsFixed(scrollY > innerHeight);
+
+    if (scrollY === 0) {
+      setIsHeaderVisible(true);
+      setIsFixed(false);
+    } else {
+      setIsFixed(true);
+
+      if (scrollY > lastScrollY) {
+        if (lastScrollY === 0) {
+          setIsHeaderVisible(false);
+        }
+      } else {
+        setIsHeaderVisible(true);
+      }
+    }
+    lastScrollY = scrollY;
+
+    if (!beforeHamburger) {
+      afterHamburger(true);
+    }
+    const divs = document.querySelectorAll("div[id]");
+    let currentSection = "";
+    divs.forEach((div) => {
+      const rect = div.getBoundingClientRect();
+      if (rect.top <= innerHeight / 2 && rect.bottom >= innerHeight / 2) {
+        currentSection = div.id;
+      }
+    });
+
+    if (currentSection) {
+      setActiveSection(currentSection);
+    }
+  };
+
   useEffect(() => {
+    // Set default active section to "Home" on initial load
+    setActiveSection("Home");
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [beforeHamburger]); // Update effect to depend on beforeHamburger state
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [beforeHamburger]);
 
   return (
     <main className="pointer-events-none absolute z-10 inset-0 select-none">
       {/* Header */}
+
       <div
-        className={`py-4 px-8 w-full max-w-screen flex flex-row justify-between items-center rounded-xl overflow-hidden transition-all duration-300 ${
-          isFixed
-            ? "fixed top-0 left-0 right-0 bg-white shadow-lg animate-slide-down"
-            : "relative"
+        className={`z-50 bg-transparent py-4 px-8 w-full max-w-screen flex flex-row justify-between items-center rounded-xl overflow-hidden transition-all duration-300 ${
+          isFixed ? "fixed top-0 left-0 right-0 animate-slide-down" : "relative"
         } ${
-          isHeaderVisible ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-300`}
+          isHeaderVisible
+            ? "transform translate-y-0"
+            : "transform -translate-y-full"
+        }`}
       >
         <div className="z-50 flex items-center">
           <a
@@ -158,13 +205,11 @@ export const Header = () => {
         }`}
       >
         <div
-          className="flex flex-col items-center justify-center h-full space-y-8"
+          className="pointer-events-auto flex flex-col items-center justify-center h-full space-y-8"
           style={{ paddingBottom: "8rem" }}
         >
-          <MenuButton label="Home" />
-          <MenuButton label="About" />
-          <MenuButton label="Work" />
-          <MenuButton label="Contact" />
+          <MenuButton label="Home" to="Home" />
+          <MenuButton label="About" to="About" />
         </div>
         <div className="absolute bottom-10 w-full flex flex-col items-center">
           <div className="flex space-x-6">
@@ -206,6 +251,7 @@ export const Header = () => {
       <audio ref={audioRef} src="./sound/soundButton.mp3" />
       <audio ref={hamburgerAudioBefore} src="./sound/afterHamburger.mp3" />
       <audio ref={hamburgerAudioAfter} src="./sound/beforeHamburger.mp3" />
+      <audio ref={linkAudio} src="./sound/linkClick.mp3" />
     </main>
   );
 };

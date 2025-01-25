@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Header } from "./components/Header";
 import { Experience } from "./components/Experience";
 import { useEffect, useState, Suspense } from "react";
+import { Link } from "react-scroll";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -43,7 +44,8 @@ function App() {
         {/* Main Application */}
         <>
           <Header />
-          <div className="flex flex-col h-full w-[100%]">
+          {/* Home */}
+          <div id="Home" className="flex flex-col h-full w-[100%]">
             <div className="flex-grow h-[950px] p-8 mt-16 mb-2">
               <div className="rounded-xl h-[90%] overflow-hidden">
                 <Canvas shadows camera={{ position: [0, 0, 8], fov: 42 }}>
@@ -54,7 +56,10 @@ function App() {
                 </Canvas>
               </div>
             </div>
-            <h1>TEST</h1>
+            {/* About */}
+            <div id="About" className="flex flex-col h-[1000px] w-[100%]">
+              <h1>TEST</h1>
+            </div>
           </div>
         </>
       </Suspense>
