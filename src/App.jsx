@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import { Header } from "./components/Header";
 import { Experience } from "./components/Experience";
 import { useEffect, useState, Suspense } from "react";
-import { Link } from "react-scroll";
 
 function App() {
   const [loading, setLoading] = useState(true);

@@ -6,6 +6,7 @@ export const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
   const [beforeHamburger, afterHamburger] = useState(true); // Manage hamburger state with beforeHamburger
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [showWaveAnimation, setShowWaveAnimation] = useState(false); // New state for wave animation
   const audioRef = useRef(null);
   const hamburgerAudioBefore = useRef(null);
   const hamburgerAudioAfter = useRef(null);
@@ -88,24 +89,37 @@ export const Header = () => {
       </button>
     );
   };
-
+  const [isAnimating, setIsAnimating] = useState(false);
   const MenuButton = ({ label, to }) => {
     const linkClick = () => {
       if (!isMuted) {
         linkAudio.current.currentTime = 0;
         linkAudio.current.play();
       }
+
+      setShowWaveAnimation(true);
+      setIsAnimating(true);
+
+      setTimeout(() => {
+        setShowWaveAnimation(false);
+        setIsAnimating(false);
+        afterHamburger(true);
+      }, 1400);
     };
+
     return (
       <Link
         to={to}
         smooth={true}
-        duration={500}
+        duration={700}
         className={`text-3xl font-semibold cursor-pointer hover:text-indigo-600 transition-colors ${
           activeSection === to ? "border-b-4 border-[#34d2f0]" : ""
         }`}
         style={{ color: "#091434" }}
-        onClick={linkClick}
+        onClick={() => {
+          setActiveSection(to);
+          linkClick();
+        }}
         onSetActive={() => setActiveSection(to)}
       >
         {label}
@@ -164,17 +178,20 @@ export const Header = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    // Jika animasi sedang berjalan, jangan biarkan beforeHamburger berubah
+    if (!isAnimating) {
+      // Anda bisa memanggil handleScroll jika ingin melakukan sesuatu berdasarkan scroll
+      window.addEventListener("scroll", handleScroll);
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [beforeHamburger]);
+  }, [beforeHamburger, isAnimating]);
 
   return (
     <main className="pointer-events-none absolute z-10 inset-0 select-none">
       {/* Header */}
-
       <div
         className={`z-50 bg-transparent py-4 px-8 w-full max-w-screen flex flex-row justify-between items-center rounded-xl overflow-hidden transition-all duration-300 ${
           isFixed ? "fixed top-0 left-0 right-0 animate-slide-down" : "relative"
@@ -246,6 +263,15 @@ export const Header = () => {
           <p className="text-gray-400 mt-4">© 2025 VANES Portfolio</p>
         </div>
       </div>
+
+      {/* Animasi */}
+      {showWaveAnimation && (
+        <div className="flex flex-col w-full bg-transparent justify-between transition-transform duration-700 transform animate-slideUp">
+          <img src="/images/waveUp.svg" className="w-full" />
+          <div className="bg-[#34d2f0] w-full h-[3000px]"></div>
+          <img src="/images/waveDown.svg" className="w-full" />
+        </div>
+      )}
 
       {/* Audio Elements */}
       <audio ref={audioRef} src="./sound/soundButton.mp3" />
