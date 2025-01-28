@@ -3,8 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        primary: ["primaryFont", "sans-serif"],
+        secondary: ["secondaryFont", "serif"],
+      },
       animation: {
-        slideUp: "slideUp 3s ease-out forwards", // Slide up animasi
+        slideUp: "slideUp 3s ease-out forwards", // Animasi slide up
       },
       keyframes: {
         slideUp: {

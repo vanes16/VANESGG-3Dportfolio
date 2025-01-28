@@ -119,7 +119,7 @@ export const Header = () => {
         to={to}
         smooth={true}
         duration={700}
-        className={`text-3xl font-semibold cursor-pointer hover:text-indigo-600 transition-colors ${
+        className={`font-secondary text-3xl font-semibold cursor-pointer transition-colors ${
           activeSection === to ? "border-b-4 border-[#34d2f0]" : ""
         }`}
         style={{ color: "#091434" }}
