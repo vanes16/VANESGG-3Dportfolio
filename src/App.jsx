@@ -64,21 +64,17 @@ function App() {
               {/* Vision */}
               <div
                 id="Vision"
-                className="relative flex flex-col h-full w-full py-20 px-12 text-center mb-20 bg-cover overflow-hidden bg-[url('/images/visionPage.svg')] "
+                className="flex flex-col h-[700px] w-full py-20 px-12 text-center mb-20 bg-gray-100 bg-center overflow-hidden"
               >
-                {/* Overlay */}
-                <div className="absolute inset-0 "></div>
-
-                {/* Konten */}
-                <div className="relative z-10">
-                  {/* Konten Vision */}
+                {/* Konten Vision */}
+                <div>
                   <motion.h1
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeInUp}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="font-primary text-6xl font-bold text-white mb-8 hover:text-[#34D2F0] transition-colors duration-300"
+                    className="font-primary text-6xl font-bold text-gray-800 mb-8 transition-colors duration-300"
                   >
                     VISION
                   </motion.h1>
@@ -90,7 +86,7 @@ function App() {
                     transition={{ duration: 0.6 }}
                     className="space-y-6 max-w-2xl mx-auto"
                   >
-                    <p className="text-2xl text-gray-100 font-open-sans leading-relaxed">
+                    <p className="text-2xl text-gray-700 font-open-sans leading-relaxed">
                       To become an individual who is not only{" "}
                       <span className="text-[#34D2F0] font-semibold">
                         innovative
@@ -101,14 +97,14 @@ function App() {
                       </span>{" "}
                       in creating technological solutions,
                     </p>
-                    <p className="text-2xl text-gray-100 font-open-sans leading-relaxed">
+                    <p className="text-2xl text-gray-700 font-open-sans leading-relaxed">
                       but also fosters a{" "}
                       <span className="text-[#34D2F0] font-semibold">
                         positive attitude
                       </span>
                       ,
                     </p>
-                    <p className="text-2xl text-gray-100 font-open-sans leading-relaxed">
+                    <p className="text-2xl text-gray-700 font-open-sans leading-relaxed">
                       and becomes a{" "}
                       <span className="text-[#34D2F0] font-semibold">
                         blessing
@@ -118,8 +114,8 @@ function App() {
                     </p>
                   </motion.div>
 
-                  <div className="my-12 border-t border-gray-300 mx-auto w-1/2"></div>
-                  <p className="text-xl text-gray-200 font-montserrat italic">
+                  <div className="my-12 border-t border-gray-500/50 mx-auto w-1/2"></div>
+                  <p className="text-xl text-gray-600 font-montserrat italic">
                     "Innovation is not just about technology; it's about making
                     a difference."
                   </p>
