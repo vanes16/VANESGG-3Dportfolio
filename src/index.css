@@ -15,7 +15,7 @@
 
 html,
 body {
-  background: linear-gradient(to bottom-right, #f0f0f0, #e0ffff);
+  background: linear-gradient(to bottom, #faf6f0, #e0ffff);
 }
 
 #root {

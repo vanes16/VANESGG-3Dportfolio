@@ -23,7 +23,7 @@ export const Experience = () => {
         enableZoom={false}
       />
 
-      <Backdrop scale={[50, 10, 5]} floor={1.5} receiveShadow position-z={-4}>
+      <Backdrop scale={[50, 10, 5]} floor={1.4}>
         <meshStandardMaterial color="#555" />
       </Backdrop>
 
@@ -31,13 +31,13 @@ export const Experience = () => {
 
       <directionalLight position={[-5, 5, 5]} intensity={0.7} />
       {/* Back Lights */}
-      <directionalLight position={[3, 3, -5]} intensity={6} color={"#ff3b3b"} />
+      <directionalLight position={[3, 3, -5]} intensity={6} color={"FCE7C8"} />
       <directionalLight
         position={[-3, 3, -5]}
         intensity={8}
         color={"#3cb1ff"}
       />
-      <Avatar position={[0, 0, 0]} />
+      <Avatar position={[0, -1.5, 4]} scale={2} />
       <Environment preset="sunset" />
     </>
   );

@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from "react";
 export const Header = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [isFixed, setIsFixed] = useState(false);
-  const [beforeHamburger, afterHamburger] = useState(true); // Manage hamburger state with beforeHamburger
+  const [beforeHamburger, afterHamburger] = useState(true);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const [showWaveAnimation, setShowWaveAnimation] = useState(false); // New state for wave animation
+  const [showWaveAnimation, setShowWaveAnimation] = useState(false);
   const audioRef = useRef(null);
   const hamburgerAudioBefore = useRef(null);
   const hamburgerAudioAfter = useRef(null);
   const linkAudio = useRef(null);
+  const waveAudio = useRef(null);
   const [activeSection, setActiveSection] = useState("");
 
   const toggleSound = () => {
@@ -95,6 +96,12 @@ export const Header = () => {
       if (!isMuted) {
         linkAudio.current.currentTime = 0;
         linkAudio.current.play();
+        setTimeout(() => {
+          linkAudio.current.pause();
+          linkAudio.current.currentTime = 0;
+          waveAudio.current.currentTime = 0;
+          waveAudio.current.play();
+        }, 100);
       }
 
       setShowWaveAnimation(true);
@@ -226,7 +233,7 @@ export const Header = () => {
           style={{ paddingBottom: "8rem" }}
         >
           <MenuButton label="Home" to="Home" />
-          <MenuButton label="About" to="About" />
+          <MenuButton label="Vision" to="Vision" />
         </div>
         <div className="absolute bottom-10 w-full flex flex-col items-center">
           <div className="flex space-x-6">
@@ -278,6 +285,7 @@ export const Header = () => {
       <audio ref={hamburgerAudioBefore} src="./sound/afterHamburger.mp3" />
       <audio ref={hamburgerAudioAfter} src="./sound/beforeHamburger.mp3" />
       <audio ref={linkAudio} src="./sound/linkClick.mp3" />
+      <audio ref={waveAudio} src="./sound/waveSound.mp3" />
     </main>
   );
 };

@@ -48,16 +48,24 @@ function App() {
             <div className="flex-grow h-[950px] p-8 mt-16 mb-2">
               <div className="rounded-xl h-[90%] overflow-hidden">
                 <Canvas shadows camera={{ position: [0, 0, 8], fov: 42 }}>
-                  <color attach="#E0FFFF" args={["#130f30"]} />
+                  <color attach="#E0FFFF" args={["#ececec"]} />
                   <group position-y={-1}>
                     <Experience />
                   </group>
                 </Canvas>
               </div>
             </div>
-            {/* About */}
-            <div id="About" className="flex flex-col h-[1000px] w-[100%]">
-              <h1>TEST</h1>
+            {/* Vision */}
+            <div
+              id="Vision"
+              className="flex flex-col h-[50%] w-[100%] p-8 text-center mb-20"
+            >
+              <h1 class="text-4xl md:text-4xl font-bold text-black bg-white p-8 rounded-2xl shadow-lg">
+                To become an individual who is not only innovative and dedicated
+                in creating technological solutions, but also fosters a positive
+                attitude, and becomes a blessing to the environment, community,
+                and the world through impactful contributions.
+              </h1>
             </div>
           </div>
         </>
