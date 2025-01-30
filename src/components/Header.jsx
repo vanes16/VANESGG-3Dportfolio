@@ -1,6 +1,8 @@
 import { Link } from "react-scroll";
 import { useEffect, useRef, useState } from "react";
 
+let lastScrollY = 0;
+
 export const Header = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [isFixed, setIsFixed] = useState(false);
@@ -134,7 +136,6 @@ export const Header = () => {
     );
   };
 
-  let lastScrollY = 0;
   const handleScroll = () => {
     const scrollY = window.scrollY;
 

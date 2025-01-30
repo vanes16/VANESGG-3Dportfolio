@@ -8,17 +8,13 @@ export function Avatar(props) {
   const { animations: idleAnimation } = useFBX("/models/Idle.fbx");
   const { animations: greetingAnimation } = useFBX("/models/Greeting.fbx");
 
-  // Beri nama animasi
   idleAnimation[0].name = "Idle";
   greetingAnimation[0].name = "Greeting";
 
-  // State untuk mengontrol animasi
   const [animation, setAnimation] = useState("Idle");
 
-  // Grup model
   const group = useRef();
 
-  // Menghubungkan animasi dengan group
   const { actions } = useAnimations(
     [idleAnimation[0], greetingAnimation[0]],
     group
