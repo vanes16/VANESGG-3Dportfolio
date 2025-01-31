@@ -16,7 +16,7 @@ export const Vision = () => {
             damping: 10,
             delay: 0.2,
           }}
-          className="font-primary text-6xl font-bold text-gray-800 mb-8 transition-colors duration-300"
+          className="font-primary text-4xl font-extrabold text-gray-800 mb-8 transition-colors duration-300"
         >
           VISION
         </motion.h1>

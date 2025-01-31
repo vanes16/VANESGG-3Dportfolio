@@ -1,6 +1,7 @@
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { Vision } from "./pages/Vision";
+import { Timeline } from "./pages/Timeline";
 import { useEffect, useState, Suspense } from "react";
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
             <div className="flex flex-col h-full w-[100%]">
               {/* Home */}
               <Home />
+
+              {/* Timeline */}
+              <Timeline />
 
               {/* Vision */}
               <Vision />
