@@ -1,6 +1,6 @@
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
-import { Vision } from "./pages/Vision";
+import { About } from "./pages/About";
 import { Timeline } from "./pages/Timeline";
 import { useEffect, useState, Suspense } from "react";
 
@@ -49,11 +49,11 @@ function App() {
               {/* Home */}
               <Home />
 
-              {/* Timeline */}
-              <Timeline />
+              {/* About */}
+              {/*<About />*/}
 
-              {/* Vision */}
-              <Vision />
+              {/* Timeline */}
+              {/*<Timeline /> */}
             </div>
           </>
         )}

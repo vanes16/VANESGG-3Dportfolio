@@ -1,14 +1,14 @@
 import "./style/Timeline.css";
 export const Timeline = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container px-[60px] py-8">
       <h3 className="font-primary text-gray-400 text-sm mb-2">
         What I Have Done
       </h3>
       <h1 className="font-primary text-4xl font-extrabold text-gray-800 mb-10">
         TIMELINE.
       </h1>
-      <div className="relative">
+      <div className="relative mx-auto">
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-600"></div>
         <div className="flex flex-col items-center space-y-12">
           <div className="relative flex items-center w-full">
