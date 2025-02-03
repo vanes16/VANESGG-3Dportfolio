@@ -6,14 +6,20 @@
 
 @font-face {
   font-family: "primaryFont";
-  src: url("/fonts/NexaRustSans-Black.ttf") format("truetype");
+  src: url("/font/NexaRustSans-Black.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "secondaryFont";
-  src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+  src: url("/font/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "thirdFont";
+  src: url("/font/Tolyer-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

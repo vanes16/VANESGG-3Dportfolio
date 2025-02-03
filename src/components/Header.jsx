@@ -121,10 +121,10 @@ export const Header = () => {
         to={to}
         smooth={true}
         duration={700}
-        className={`font-secondary text-3xl font-semibold cursor-pointer transition-colors ${
+        className={`font-secondary text-3xl font-bold cursor-pointer transition-colors ${
           activeSection === to ? "border-b-4 border-[#34d2f0]" : ""
         }`}
-        style={{ color: "#091434" }}
+        style={{ color: "#ffffff" }}
         onClick={() => {
           setActiveSection(to);
           linkClick();
@@ -225,7 +225,7 @@ export const Header = () => {
 
       {/* Side Menu */}
       <div
-        className={`fixed top-0 right-0 w-full h-full bg-white shadow-lg transition-transform duration-1000 ease-in-out ${
+        className={`fixed top-0 right-0 w-full h-full bg-[#111827] shadow-lg transition-transform duration-1000 ease-in-out ${
           beforeHamburger ? "translate-x-full" : "translate-x-0"
         }`}
       >
@@ -240,28 +240,28 @@ export const Header = () => {
           <div className="flex space-x-6">
             <a
               href="http://instagram.com/vanesliu_"
-              className="text-3xl text-gray-500 hover:text-[#091434] transition-colors duration-300 pointer-events-auto"
+              className="text-3xl text-gray-500 hover:text-white transition-colors duration-300 pointer-events-auto"
               style={{ cursor: "pointer" }}
             >
               <i className="fab fa-instagram"></i>
             </a>
             <a
               href="https://github.com/vanes16"
-              className="text-3xl text-gray-500 hover:text-[#091434] transition-colors duration-300 pointer-events-auto"
+              className="text-3xl text-gray-500 hover:text-white transition-colors duration-300 pointer-events-auto"
               style={{ cursor: "pointer" }}
             >
               <i className="fab fa-github"></i>
             </a>
             <a
               href="https://id.linkedin.com/in/vanes-vanes-4894b1308"
-              className="text-3xl text-gray-500 hover:text-[#091434] transition-colors duration-300 pointer-events-auto"
+              className="text-3xl text-gray-500 hover:text-white transition-colors duration-300 pointer-events-auto"
               style={{ cursor: "pointer" }}
             >
               <i className="fab fa-linkedin"></i>
             </a>
             <a
               href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=vanesliu23@gmail.com"
-              className="text-3xl text-gray-500 hover:text-[#091434] transition-colors duration-300 pointer-events-auto"
+              className="text-3xl text-gray-500 hover:text-white transition-colors duration-300 pointer-events-auto"
               style={{ cursor: "pointer" }}
             >
               <i className="fas fa-envelope"></i>

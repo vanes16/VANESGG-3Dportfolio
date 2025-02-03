@@ -2,6 +2,7 @@ import { Experience } from "../components/Experience";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useRef, useEffect, useState } from "react";
 import { BackgroundCircles } from "./design/homeDesign";
+import Button from "./design/Button";
 import "./style/Home.css";
 
 const Rings = () => {
@@ -53,15 +54,24 @@ export const Home = () => {
       <div style={parallaxStyle}>
         <BackgroundCircles />
       </div>
-      <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5 mt-[60px] text-white z-10">
+      <br />
+      <br />
+      <div
+        className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5 mt-[60px] z-10 text-white"
+        style={{ lineHeight: "1.375" }}
+      >
         Innovative and Dedicated In
         <br></br> Creating Technological Solutions
       </div>
-      <p className="text-lg md:text-xl mb-6 text-gray-400 z-10">
+      <p className="text-lg md:text-xl mb-6 text-gray-300 z-10 ">
         Bring positive attitude and to be a blessing to the <br></br>{" "}
         environment, community, and the world.
       </p>
-      <br></br> <br></br>
+      <Button className="font-third text-3xl font-thin " white>
+        Download CV
+      </Button>
+      <br></br>
+      <br></br>
       <div className="rounded-xl h-[80%] w-full xl:w-[60%] md:w-[100%] overflow-hidden flex items-center justify-center z-10 mb-10 gradient-border">
         <Canvas
           className="rounded-xl"

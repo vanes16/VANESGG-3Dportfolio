@@ -29,7 +29,7 @@ function App() {
         {/* Loading Screen */}
         {loading && (
           <div
-            className={`absolute inset-0 bg-gradient-to-b from-white to-cyan-100 z-50 flex items-center justify-center duration-500 ${
+            className={`absolute inset-0 bg-#111827 z-50 flex items-center justify-center duration-500 ${
               hideLoading ? "hideLoading" : ""
             }`}
           >
