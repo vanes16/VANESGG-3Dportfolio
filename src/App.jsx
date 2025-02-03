@@ -50,7 +50,7 @@ function App() {
               <Home />
 
               {/* About */}
-              {/*<About />*/}
+              <About />
 
               {/* Timeline */}
               {/*<Timeline /> */}
