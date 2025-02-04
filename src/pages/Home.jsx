@@ -35,10 +35,10 @@ export const Home = () => {
   return (
     <div
       ref={parallaxRef}
-      className="h-[1300px] px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0 bg-cover bg-center bg-[url('images/homeBLUE.jpg')] "
+      className="h-[1300px] px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0 bg-cover bg-center bg-[url('/images/homeBLUE.jpg')] "
     >
       <div className="absolute inset-0 bg-black bg-opacity-80 h-[1300px]"></div>
-      <div className="absolute inset-0 bg-cover bg-center bg-[url('images/gradient.png')] h-[1700px] w-full opacity-50"></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-[url('/images/gradient.png')] h-[1700px] w-full opacity-50"></div>
       <Rings />
       <div style={parallaxStyle}>
         <BackgroundCircles />
