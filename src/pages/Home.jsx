@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useRef, useEffect, useState } from "react";
 import { BackgroundCircles, Rings } from "./design/homeDesign";
 import Button from "./design/Button";
+import backgroundHome from './images/homeBLUE.jpg';
 import "./style/style.css";
 
 export const Home = () => {
@@ -35,7 +36,7 @@ export const Home = () => {
   return (
     <div
       ref={parallaxRef}
-      className="h-[1300px] px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0 bg-cover bg-center bg-[url('/images/homeBLUE.jpg')] "
+      className="h-[1300px] px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0 bg-cover bg-center "
     >
       <div className="absolute inset-0 bg-black bg-opacity-80 h-[1300px]"></div>
       <div className="absolute inset-0 bg-cover bg-center bg-[url('/images/gradient.png')] h-[1700px] w-full opacity-50"></div>
