@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
-import "./style/About.css";
+import "./style/style.css";
 
 // Define the fadeIn animation variant
 const fadeIn = (direction, type, delay, duration) => ({

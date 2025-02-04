@@ -53,7 +53,7 @@ function App() {
               <About />
 
               {/* Timeline */}
-              {/*<Timeline /> */}
+              <Timeline /> 
             </div>
           </>
         )}

@@ -201,7 +201,7 @@ export const Header = () => {
     <main className="pointer-events-none absolute z-10 inset-0 select-none">
       {/* Header */}
       <div
-        className={`z-50 bg-transparent py-4 px-8 w-full max-w-screen flex flex-row justify-between items-center rounded-xl overflow-hidden transition-all duration-300 ${
+        className={`z-50 bg-transparent py-4 px-8 w-full max-w-screen flex flex-row justify-between items-center overflow-hidden transition-all duration-300 ${
           isFixed ? "fixed top-0 left-0 right-0 animate-slide-down" : "relative"
         } ${
           isHeaderVisible
@@ -225,12 +225,12 @@ export const Header = () => {
 
       {/* Side Menu */}
       <div
-        className={`fixed top-0 right-0 w-full h-full bg-[#111827] shadow-lg transition-transform duration-1000 ease-in-out ${
+        className={`fixed top-0 right-0 w-full h-full bg-[#111827] transition-transform duration-1000 ease-in-out ${
           beforeHamburger ? "translate-x-full" : "translate-x-0"
         }`}
       >
         <div
-          className="pointer-events-auto flex flex-col items-center justify-center h-full space-y-8"
+          className="pointer-events-auto flex flex-col items-center justify-center h-full space-y-8 shadow-lg"
           style={{ paddingBottom: "8rem" }}
         >
           <MenuButton label="Home" to="Home" />

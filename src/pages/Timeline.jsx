@@ -1,4 +1,4 @@
-import "./style/Timeline.css";
+import "./style/style.css";
 export const Timeline = () => {
   return (
     <div className="container px-[60px] py-8">
