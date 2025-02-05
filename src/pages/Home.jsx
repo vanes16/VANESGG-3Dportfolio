@@ -27,9 +27,9 @@ export const Home = () => {
   const parallaxRef = useRef(null);
 
   return (
-    <div className="h-[1400px] px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0 bg-cover bg-center bg-[url('images/homeBLUE.jpg')] ">
+    <div className="h-[1400px] px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0 bg-cover bg-center bg-[url('/images/homeBLUE.jpg')] ">
       <div className="absolute inset-0 bg-black bg-opacity-70 h-[1400px] border-b border-white border-opacity-50"></div>
-      <div className="absolute inset-0 bg-cover bg-center bg-[url('images/gradient.png')] h-[1700px] w-full opacity-50"></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-[url('/images/gradient.png')] h-[1700px] w-full opacity-50"></div>
       <Rings />
       <div ref={parallaxRef}>
         <BackgroundCircles />
