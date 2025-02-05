@@ -1,5 +1,7 @@
 import "./style/eyes.css";
 import Eyes from "./design/Eye";
+import InfiniteSlide from "./design/infiniteSlide";
+
 const Button = ({ label, isActive }) => (
   <button
     className={` font-secondary font-semibold text-xl px-5 py-1 lg:text-2xl ${
@@ -51,6 +53,7 @@ export const Project = () => {
           </div>
         </div>
       </div>
+      <InfiniteSlide />
       <Eyes />
     </div>
   );
