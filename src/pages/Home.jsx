@@ -2,45 +2,36 @@ import { Experience } from "../components/Experience";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useRef, useEffect, useState } from "react";
 import { BackgroundCircles, Rings } from "./design/homeDesign";
-import Button from "./design/Button";
+import ButtonSvg from "./design/ButtonSvg";
 import "./style/style.css";
+
+const Button = ({ className, children, px, white, downloadPdf }) => {
+  const classes = `button relative inline-flex items-center justify-center
+    h-11 transition-all bg-transparent duration-700 ease-out hover:text-[#34d2f0]
+    ${px || "px-7"}
+    ${white ? "text-[#0E0C15]" : "text-[#FFFFFF]"} ${className || ""}`;
+
+  const spanClasses = "relative z-10";
+
+  const renderButton = () => (
+    <a href={downloadPdf} target="_blank" className={classes}>
+      <span className={spanClasses}>{children}</span>
+      {ButtonSvg(white)}
+    </a>
+  );
+
+  return renderButton();
+};
 
 export const Home = () => {
   const parallaxRef = useRef(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      const { clientX, clientY } = event;
-      const { width, height, left, top } =
-        parallaxRef.current.getBoundingClientRect();
-      const x = (clientX - left - width / 2) / width;
-      const y = (clientY - top - height / 2) / height;
-      setMousePosition({ x, y });
-    };
-
-    parallaxRef.current.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      parallaxRef.current.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
-  const parallaxStyle = {
-    transform: `translate(${mousePosition.x * 30}px, ${
-      mousePosition.y * 30
-    }px)`,
-  };
 
   return (
-    <div
-      ref={parallaxRef}
-      className="h-[1300px] px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0 bg-cover bg-center bg-[url('images/homeBLUE.jpg')] "
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-80 h-[1300px]"></div>
+    <div className="h-[1400px] px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0 bg-cover bg-center bg-[url('images/homeBLUE.jpg')] ">
+      <div className="absolute inset-0 bg-black bg-opacity-70 h-[1400px] border-b border-white border-opacity-50"></div>
       <div className="absolute inset-0 bg-cover bg-center bg-[url('images/gradient.png')] h-[1700px] w-full opacity-50"></div>
       <Rings />
-      <div style={parallaxStyle}>
+      <div ref={parallaxRef}>
         <BackgroundCircles />
       </div>
       <br />
@@ -66,7 +57,7 @@ export const Home = () => {
 
       <br></br>
       <br></br>
-      <div className="rounded-xl h-[80%] w-full xl:w-[60%] md:w-[100%] overflow-hidden flex items-center justify-center z-10 mb-10 gradient-border">
+      <div className="rounded-xl h-[80%] w-full xl:w-[60%] md:w-[100%] overflow-hidden flex items-center justify-center z-10 mb-[60px] gradient-border">
         <Canvas
           className="rounded-xl"
           shadows

@@ -34,7 +34,7 @@ export const Experience = () => {
         <directionalLight
           position={[3, 3, -5]}
           intensity={6}
-          color={"FCE7C8"}
+          color={"#FCE7C8"}
         />
         <directionalLight
           position={[-3, 3, -5]}

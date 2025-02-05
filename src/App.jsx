@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Timeline } from "./pages/Timeline";
+import { Project } from "./pages/Project";
 import { useEffect, useState, Suspense } from "react";
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
       // Mulai animasi keluar
       setHideLoading(true);
 
-      // Hapus elemen loading setelah animasi selesai (500ms)
       setTimeout(() => {
         setLoading(false);
       }, 500);
@@ -29,7 +29,7 @@ function App() {
         {/* Loading Screen */}
         {loading && (
           <div
-            className={`absolute inset-0 bg-#111827 z-50 flex items-center justify-center duration-500 ${
+            className={`absolute inset-0 bg-[#111827] z-50 flex items-center justify-center duration-500 ${
               hideLoading ? "hideLoading" : ""
             }`}
           >
@@ -50,10 +50,11 @@ function App() {
               <Home />
 
               {/* About */}
-              <About />
+              {/* <About />*/}
 
               {/* Timeline */}
-              <Timeline /> 
+              {/*<Timeline />*/}
+              <Project />
             </div>
           </>
         )}
