@@ -1,6 +1,7 @@
 import "./style/eyes.css";
 import Eyes from "./design/Eye";
 import InfiniteSlide from "./design/infiniteSlide";
+import Chatbot from "./design/Chatbot";
 
 const Button = ({ label, isActive }) => (
   <button
@@ -16,15 +17,20 @@ const Button = ({ label, isActive }) => (
 
 export const Project = () => {
   return (
-    <div className="flex flex-col items-center justify-center mt-5">
-      <div className="bg-transparent p-2 flex justify-around text-white mb-10 w-[60%] lg:w-[50%] rounded-2xl border border-gray-400">
+    <div className="relative flex flex-col items-center justify-center mt-5 z-0">
+      {/* Background images */}
+      <div className="w-full h-[800px] bg-center bg-cover bg-[url('/images/Earth.jpg')] opacity-[3.5%] absolute top-[1000px] contrast-200 inset-0"></div>
+      <div className="w-full h-[800px] bg-center bg-cover bg-[url('/images/gradient.png')] opacity-[10%] absolute top-[1150px] inset-0"></div>
+
+      {/* Content */}
+      <div className="bg-transparent p-2 flex justify-around text-white mb-10 w-[60%] lg:w-[50%] rounded-2xl border border-gray-400 relative z-10">
         <Button label="Code" isActive />
         <Button label="Plan" />
         <Button label="Collaborate" />
         <Button label="Automate" />
         <Button label="Secure" />
       </div>
-      <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden w-[88%] lg:w-[56%] mb-[60px]">
+      <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden w-[88%] lg:w-[56%] mb-[60px] relative z-10">
         <div className="flex">
           <div className="w-1/2 bg-gray-800 p-4">
             <div className="text-gray-400 mb-4">GITHUB COPILOT: CHAT</div>
@@ -55,19 +61,20 @@ export const Project = () => {
       </div>
       <InfiniteSlide />
       <Eyes />
-      <div className="mb-5">
+
+      <div className="mb-10 relative z-10">
         <h1 className="font-primary text-3xl font-bold text-white mt-[-70px]">
-          Techonology Anthusiast
+          Technology Enthusiast
         </h1>
-        <br></br>
+        <br />
         <p className="text-xl text-white text-opacity-[75%] font-secondary text-center">
-          With innovative solutions integrated across the platform<br></br> you
-          can streamline processes, enhance efficiency, and make <br></br>
+          With innovative solutions integrated across the platform,
+          <br />
+          you can streamline processes, enhance efficiency, and make <br />a
           meaningful impact on your projects.
         </p>
       </div>
-      <div className="w-full h-[800px] bg-center bg-cover bg-[url('/images/gradient.png')] opacity-[10%] absolute top-[2380px] inset-0"></div>
-      <div className="w-full h-[800px] bg-center bg-cover bg-[url('/images/Earth.jpg')] opacity-[3.5%] absolute top-[2380px] contrast-200"></div>
+      <Chatbot />
     </div>
   );
 };
