@@ -24,7 +24,7 @@ export const Project = () => {
         <Button label="Automate" />
         <Button label="Secure" />
       </div>
-      <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden w-[88%] lg:w-[56%]">
+      <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden w-[88%] lg:w-[56%] mb-[60px]">
         <div className="flex">
           <div className="w-1/2 bg-gray-800 p-4">
             <div className="text-gray-400 mb-4">GITHUB COPILOT: CHAT</div>
@@ -55,6 +55,19 @@ export const Project = () => {
       </div>
       <InfiniteSlide />
       <Eyes />
+      <div className="mb-5">
+        <h1 className="font-primary text-3xl font-bold text-white mt-[-70px]">
+          Techonology Anthusiast
+        </h1>
+        <br></br>
+        <p className="text-xl text-white text-opacity-[75%] font-secondary text-center">
+          With innovative solutions integrated across the platform<br></br> you
+          can streamline processes, enhance efficiency, and make <br></br>
+          meaningful impact on your projects.
+        </p>
+      </div>
+      <div className="w-full h-[800px] bg-center bg-cover bg-[url('/images/gradient.png')] opacity-[10%] absolute top-[2380px] inset-0"></div>
+      <div className="w-full h-[800px] bg-center bg-cover bg-[url('/images/Earth.jpg')] opacity-[3.5%] absolute top-[2380px] contrast-200"></div>
     </div>
   );
 };

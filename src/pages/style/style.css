@@ -28,7 +28,7 @@
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
 .bg-tertiary {
-  background-color: #1a1a1a; /* Example color */
+  background-color: rgba(0, 123, 255, 0.1);
 }
 
 .shadow-card {
@@ -55,7 +55,7 @@
 .slider .list {
   display: flex;
   width: 100%;
-  min-width: calc(200px * var(--quantity));
+  min-width: calc(205px * var(--quantity));
   position: relative;
 }
 .slider .list .item {
