@@ -1,4 +1,4 @@
-### VANES - 3D Portfolio
+### VANES - Portfolio
 
 ### Built With
 
