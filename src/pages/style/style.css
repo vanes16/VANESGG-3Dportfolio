@@ -72,48 +72,6 @@
 .slider .list .item img {
   width: 100%;
 }
-@media (max-width: 768px) {
-  .slider .list {
-    width: calc(150px * var(--quantity));
-  }
-  .slider .list .item {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    animation: autoRun 10s linear infinite;
-    transition: filter 0.5s;
-    animation-delay: calc(
-      (10s / var(--quantity)) * (var(--position) - 1) - 10s
-    ) !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .slider .list {
-    width: calc(45px * var(--quantity));
-  }
-  .slider .list .item {
-    width: 55px;
-    height: 55px;
-    position: absolute;
-    animation: autoRun 10s linear infinite;
-    transition: filter 0.5s;
-    animation-delay: calc(
-      (10s / var(--quantity)) * (var(--position) - 1) - 10s
-    ) !important;
-  }
-  .slider {
-    width: 100%;
-    height: var(--height);
-    overflow: hidden;
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      #000 10% 90%,
-      transparent
-    );
-  }
-}
 
 @keyframes autoRun {
   from {
@@ -141,6 +99,101 @@
     left: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .slider {
+    width: 100%;
+    height: 205px;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 10% 90%,
+      transparent
+    )
+  }
+  .slider .list {
+    width: calc(50px * var(--quantity));
+  }
+  .slider .list .item {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc(
+      (10s / var(--quantity)) * (var(--position) - 1) - 10s
+    ) !important;
+  }
+  @keyframes autoRun {
+    from {
+      left: -170%;
+    }
+    to {
+      left: 100%;
+    }
+  }
+  .slider[reverse="true"] .item {
+    animation: reversePlay 10s linear infinite;
+  }
+  @keyframes reversePlay {
+    from {
+      left: 100%;
+    }
+    to {
+      left: -170%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    width: 100%;
+    height: 205px;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 10% 90%,
+      transparent
+    )
+  }
+  .slider .list {
+    width: calc(45px * var(--quantity));
+  }
+  .slider .list .item {
+    width: 130px;
+    height: 130px;
+    position :absolute;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc(
+      (10s / var(--quantity)) * (var(--position) - 1) - 10s
+    ) !important;
+  
+  }
+
+@keyframes autoRun {
+  from {
+    left: -300%;
+  }
+  to {
+    left: 100%;
+  }
+}
+.slider[reverse="true"] .item {
+  animation: reversePlay 10s linear infinite;
+}
+@keyframes reversePlay {
+  from {
+    left: 300%;
+  }
+  to {
+    left: -100%;
+  }
+}
+}
+
 :root {
   --dark-blue: #192841;
   --blue: #0099bc;
