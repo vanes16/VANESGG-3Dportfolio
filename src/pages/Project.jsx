@@ -23,13 +23,14 @@ export const Project = () => {
       <div className="w-full h-[800px] bg-center bg-cover bg-[url('/images/gradient.png')] opacity-[10%] absolute top-[1150px] inset-0"></div>
 
       {/* Content */}
-      <div className="bg-transparent p-2 flex justify-around text-white mb-10 w-[60%] lg:w-[50%] rounded-2xl border border-gray-400 relative z-10">
+      <div className="bg-transparent p-2 flex flex-wrap justify-center lg:justify-around text-white mb-10 w-full lg:w-[50%] rounded-2xl border border-gray-400 relative z-10">
         <Button label="Code" isActive />
         <Button label="Plan" />
         <Button label="Collaborate" />
         <Button label="Automate" />
         <Button label="Secure" />
       </div>
+
       <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden w-[88%] lg:w-[56%] mb-[60px] relative z-10">
         <div className="flex">
           <div className="w-1/2 bg-gray-800 p-4">
@@ -62,7 +63,7 @@ export const Project = () => {
       <InfiniteSlide />
       <Eyes />
 
-      <div className="mb-10 relative z-10">
+      <div className="mb-10 relative z-10 justifty-center items-center text-center">
         <h1 className="font-primary text-3xl font-bold text-white mt-[-70px]">
           Technology Enthusiast
         </h1>
@@ -74,7 +75,7 @@ export const Project = () => {
           meaningful impact on your projects.
         </p>
       </div>
-      <Chatbot />
+      <Chatbot/>
     </div>
   );
 };
