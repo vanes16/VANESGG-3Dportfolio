@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 360px;
+  height: 330px;
 }
 .eyes-follow-tired .container {
   display: flex;
@@ -15,7 +15,7 @@
 .eyes-follow-tired .container .eyelid {
   position: absolute;
   width: 220px;
-  height: 100px;
+  height: 80px;
   background-color: #111827;
   z-index: 400;
   top: -120px;
@@ -24,10 +24,10 @@
 }
 @keyframes blink {
   0% {
-    top: -120px;
+    top: -110px;
   }
   95% {
-    top: -120px;
+    top: -110px;
   }
   100% {
     top: -50px;

@@ -2,7 +2,7 @@ import "../style/style.css";
 
 const InfiniteSlide = () => {
   return (
-    <div className="border-b border-white border-opacity-50">
+    <div>
       <div
         className="slider"
         style={{ "--width": "100px", "--height": "100px", "--quantity": "9" }}
@@ -15,7 +15,7 @@ const InfiniteSlide = () => {
             <img src="/languages icon/csharp.svg" alt="" />
           </div>
           <div className="item" style={{ "--position": 3 }}>
-            <img src="/languages icon/cpp.svg" alt="" />
+            <img src="/languages icon/c++.svg" alt="" />
           </div>
           <div className="item" style={{ "--position": 4 }}>
             <img src="/languages icon/go.svg" alt="" />
@@ -38,7 +38,7 @@ const InfiniteSlide = () => {
         </div>
       </div>
       <div
-        className="slider mt-4 mb-5"
+        className="slider"
         reverse="true"
         style={{ "--width": "100px", "--height": "100px", "--quantity": "8" }}
       >

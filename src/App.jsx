@@ -48,13 +48,12 @@ function App() {
             <div className="flex flex-col h-full w-[100%]">
               {/* Home */}
               <Home />
-
-              {/* About */}
-              {/* <About />*/}
+              
+              {/* Project */}
+              <Project />
 
               {/* Timeline */}
-              {/*<Timeline />*/}
-              <Project />
+              <Timeline />
             </div>
           </>
         )}

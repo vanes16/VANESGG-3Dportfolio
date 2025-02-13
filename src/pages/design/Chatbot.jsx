@@ -3,9 +3,9 @@ import "../style/style.css";
 
 const Chatbot = () => {
   return (
-    <div className="w-[1100px] h-[600px] bg-white bg-opacity-10 backdrop-blur-lg justify-center items-center flex rounded-xl border-t border-gray-400">
-      <div className="z-1 shadow-xl bg-[#111827] backdrop-blur-lg rounded-xl p-6 w-full max-w-md text-white">
-        <div className="chatbox-message-header rounded-t-xl">
+    <div className="w-full max-w-5xl h-[700px] bg-white bg-opacity-[3%] backdrop-blur-sm justify-center items-center flex rounded-t-3xl ">
+      <div className="z-1 shadow-xl bg-white bg-opacity-[3%] backdrop-blur-lg rounded-3xl p-3 w-full max-w-md text-white">
+        <div className="chatbox-message-header rounded-t-xl border-b">
           <div className="chatbox-message-profile">
             <img
               src="/images/logos.png"

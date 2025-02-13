@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 import "./style/style.css";
 
-// Define the fadeIn animation variant
 const fadeIn = (direction, type, delay, duration) => ({
   hidden: {
     x: direction === "left" ? 100 : direction === "right" ? -100 : 0,

@@ -110,7 +110,7 @@
       transparent,
       #000 10% 90%,
       transparent
-    )
+    );
   }
   .slider .list {
     width: calc(50px * var(--quantity));
@@ -156,7 +156,7 @@
       transparent,
       #000 10% 90%,
       transparent
-    )
+    );
   }
   .slider .list {
     width: calc(45px * var(--quantity));
@@ -164,34 +164,33 @@
   .slider .list .item {
     width: 130px;
     height: 130px;
-    position :absolute;
+    position: absolute;
     animation: autoRun 10s linear infinite;
     transition: filter 0.5s;
     animation-delay: calc(
       (10s / var(--quantity)) * (var(--position) - 1) - 10s
     ) !important;
-  
   }
 
-@keyframes autoRun {
-  from {
-    left: -300%;
+  @keyframes autoRun {
+    from {
+      left: -300%;
+    }
+    to {
+      left: 100%;
+    }
   }
-  to {
-    left: 100%;
+  .slider[reverse="true"] .item {
+    animation: reversePlay 10s linear infinite;
   }
-}
-.slider[reverse="true"] .item {
-  animation: reversePlay 10s linear infinite;
-}
-@keyframes reversePlay {
-  from {
-    left: 300%;
+  @keyframes reversePlay {
+    from {
+      left: 300%;
+    }
+    to {
+      left: -100%;
+    }
   }
-  to {
-    left: -100%;
-  }
-}
 }
 
 :root {
@@ -263,12 +262,11 @@
 .chatbox-message-dropdown-menu {
   list-style: none;
   margin: 0;
-
   top: 100%;
   right: 0;
   background: var(--light);
   padding: 0.5rem 0;
-  width: 120px;
+  width: 130px;
   box-shadow: 0.25rem 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
   transform: scale(0);
   transform-origin: top right;
@@ -299,7 +297,7 @@
   display: flex;
   flex-direction: column;
   grid-row-gap: 1rem;
-  height: 280px;
+  height: 500px;
   overflow-y: auto;
 }
 .chatbox-message-bottom {
@@ -330,7 +328,6 @@
   background: var(--dark-blue);
   border-radius: 50%;
   color: var(--white);
-
   width: 48px;
   height: 48px;
   display: flex;
