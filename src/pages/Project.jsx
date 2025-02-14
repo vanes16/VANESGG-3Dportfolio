@@ -20,7 +20,7 @@ export const Project = () => {
   return (
     <div className="relative flex flex-col items-center justify-center mt-5 z-0 border-b border-white border-opacity-20 ">
       {/* Background images */}
-      <div className="w-full h-[700px] bg-center bg-cover bg-[url('/images/Earth.jpg')] opacity-[3.5%] absolute top-[1250px] contrast-200 inset-0 "></div>
+      <div className="w-full h-[700px] bg-center bg-cover top-[1250px] sm:h-[640px] bg-[url('/images/Earth.jpg')] opacity-[3.5%] absolute contrast-200 inset-0 "></div>
       <div className="w-full h-[700px] bg-center bg-cover bg-[url('/images/gradient.png')] opacity-[3%] absolute top-[1250px] inset-0"></div>
 
       {/* Content */}
@@ -65,28 +65,29 @@ export const Project = () => {
       <Eyes />
 
       <div className="mb-10 relative z-10 justifty-center items-center text-center">
-      <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        textShadow: [
-          "2px 2px 0px red",
-          "-2px -2px 0px cyan",
-          "2px -2px 0px blue",
-          "-2px 2px 0px green"
-        ],
-        x: [0, -2, 2, 0], 
-      }}
-      transition={{
-        duration: 0.1, 
-        delay: 0.5, 
-        repeat: Infinity, 
-        repeatType: "reverse",
-      }}
-    >
-        <h1 className="font-primary text-5xl font-bold text-white mt-[-70px]">
-          Technology Enthusiast
-        </h1></motion.div>
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            textShadow: [
+              "3px 3px 0px red",
+              "-3px -3px 0px cyan",
+              "3px -3px 0px blue",
+              "-3px 3px 0px green",
+            ],
+            x: [0, -2, 2, 0],
+          }}
+          transition={{
+            duration: 0.1,
+            delay: 0.5,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        >
+          <h1 className="font-primary text-5xl font-bold text-white mt-[-70px]">
+            Technology Enthusiast
+          </h1>
+        </motion.span>
         <br />
         <p className="text-2xl text-white text-opacity-[75%] font-secondary text-center mt-[20px]">
           With innovative solutions integrated across the platform,

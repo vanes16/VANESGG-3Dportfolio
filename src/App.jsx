@@ -48,7 +48,7 @@ function App() {
             <div className="flex flex-col h-full w-[100%]">
               {/* Home */}
               <Home />
-              
+
               {/* Project */}
               <Project />
 

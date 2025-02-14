@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "9.75.0",
+    "@react-three/drei": "^9.121.4",
     "@react-three/fiber": "8.13.3",
     "framer-motion": "^10.12.16",
     "framer-motion-3d": "^10.12.16",
@@ -20,6 +20,7 @@
     "react-just-parallax": "^3.1.16",
     "react-scroll": "^1.9.0",
     "react-tilt": "^1.0.2",
+    "react-vertical-timeline-component": "^3.5.3",
     "three": "0.146.0"
   },
   "devDependencies": {
