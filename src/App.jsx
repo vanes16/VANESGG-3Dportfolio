@@ -1,8 +1,8 @@
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Timeline } from "./pages/Timeline";
 import { Project } from "./pages/Project";
+import { Timeline } from "./pages/Timeline";
+import { Contacts } from "./pages/Contacts";
 import { useEffect, useState, Suspense } from "react";
 
 function App() {
@@ -54,6 +54,9 @@ function App() {
 
               {/* Timeline */}
               <Timeline />
+
+              {/* Nametag */}
+              <Contacts />
             </div>
           </>
         )}
