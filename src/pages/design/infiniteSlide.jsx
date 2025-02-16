@@ -15,7 +15,7 @@ const InfiniteSlide = () => {
             <img src="/languages icon/csharp.svg" alt="" />
           </div>
           <div className="item" style={{ "--position": 3 }}>
-            <img src="/languages icon/c++.svg" alt="" />
+            <img src="/languages icon/cpp.svg" alt="" />
           </div>
           <div className="item" style={{ "--position": 4 }}>
             <img src="/languages icon/go.svg" alt="" />
