@@ -75,7 +75,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     j1 = useRef(),
     j2 = useRef(),
     j3 = useRef(),
-    card = useRef(); // prettier-ignore
+    card = useRef(); 
   const vec = new THREE.Vector3(),
     ang = new THREE.Vector3(),
     rot = new THREE.Vector3(),
@@ -178,7 +178,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
         >
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
-            scale={2.25}
+            scale={2.3}
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
@@ -222,7 +222,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           resolution={[width, height]}
           useMap
           map={texture}
-          repeat={[-3, 1]}
+          repeat={[-4, 1]}
           lineWidth={1}
         />
       </mesh>
