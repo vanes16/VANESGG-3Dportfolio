@@ -141,7 +141,7 @@ const Chatbot = () => {
             />
             <button
               type="submit"
-              className="chatbox-message-button"
+              className="chatbox-message-button bg-[#192841]"
               disabled={loading}
             >
               <i className="mr-[20px] fas fa-paper-plane"></i>
