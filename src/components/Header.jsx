@@ -214,7 +214,7 @@ export const Header = () => {
             className="pointer-events-auto"
             href="https://github.com/vanes16/VANESGG-3Dportfolio/"
           >
-            <img className="w-40" src="/images/logo.png" alt="Logo" />
+            <img className="w-40 h-[55px]" src="/images/hLogo.png" alt="Logo" />
           </a>
         </div>
         <div className="flex items-center gap-2 pointer-events-auto space-x-2">

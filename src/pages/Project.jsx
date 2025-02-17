@@ -19,10 +19,6 @@ const Button = ({ label, isActive }) => (
 export const Project = () => {
   return (
     <div className="relative flex flex-col items-center justify-center mt-5 z-0 border-b border-white border-opacity-20 ">
-      {/* Background images */}
-      <div className="w-full h-[700px] bg-center bg-cover top-[1250px] sm:h-[640px] bg-[url('/images/Earth.jpg')] opacity-[3.5%] absolute contrast-200 inset-0 "></div>
-      <div className="w-full h-[700px] bg-center bg-cover bg-[url('/images/gradient.png')] opacity-[3%] absolute top-[1250px] inset-0"></div>
-
       {/* Content */}
       <div className="bg-transparent p-2 flex flex-wrap justify-center lg:justify-around text-white mb-10 w-full lg:w-[50%] sm:w-[60%] rounded-[48px] border border-gray-400 relative z-10">
         <Button label="Code" isActive />

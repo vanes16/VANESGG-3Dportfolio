@@ -20,12 +20,12 @@ import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 const GLTF_PATH = "/nametag/kartu.glb";
-const TEXTURE_PATH = "/images/logo.png";
+const TEXTURE_PATH = "/nametag/band.jpg";
 const NEW_TEXTURE_PATH = "/nametag/glbtexture.png";
 
 useGLTF.preload(GLTF_PATH);
 useTexture.preload(TEXTURE_PATH);
-useTexture.preload(NEW_TEXTURE_PATH); 
+useTexture.preload(NEW_TEXTURE_PATH);
 
 export const Nametag = () => {
   return (
@@ -34,36 +34,8 @@ export const Nametag = () => {
       <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
         <Band />
       </Physics>
-      <Environment background blur={0.75}>
+      <Environment>
         <color attach="background" args={["#111827"]} />
-        <Lightformer
-          intensity={2}
-          color="#896129"
-          position={[0, -1, 5]}
-          rotation={[0, 0, Math.PI / 3]}
-          scale={[100, 0.1, 1]}
-        />
-        <Lightformer
-          intensity={3}
-          color="#896129"
-          position={[-1, -1, 1]}
-          rotation={[0, 0, Math.PI / 3]}
-          scale={[100, 0.1, 1]}
-        />
-        <Lightformer
-          intensity={3}
-          color="#896129"
-          position={[1, 1, 1]}
-          rotation={[0, 0, Math.PI / 3]}
-          scale={[100, 0.1, 1]}
-        />
-        <Lightformer
-          intensity={10}
-          color="#896129"
-          position={[-10, 0, 14]}
-          rotation={[0, Math.PI / 2, Math.PI / 3]}
-          scale={[100, 10, 1]}
-        />
       </Environment>
     </Canvas>
   );
@@ -75,11 +47,11 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     j1 = useRef(),
     j2 = useRef(),
     j3 = useRef(),
-    card = useRef(); 
+    card = useRef(); // prettier-ignore
   const vec = new THREE.Vector3(),
     ang = new THREE.Vector3(),
     rot = new THREE.Vector3(),
-    dir = new THREE.Vector3(); 
+    dir = new THREE.Vector3();
   const segmentProps = {
     type: "dynamic",
     canSleep: true,
@@ -89,7 +61,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   };
   const { nodes, materials } = useGLTF(GLTF_PATH);
   const texture = useTexture(TEXTURE_PATH);
-  const newTexture = useTexture(NEW_TEXTURE_PATH); 
+  const newTexture = useTexture(NEW_TEXTURE_PATH);
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
     () =>
@@ -105,8 +77,11 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
-  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]); 
-  useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]]); 
+  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
+  useSphericalJoint(j3, card, [
+    [0, 0, 0],
+    [0, 1.45, 0],
+  ]);
 
   useEffect(() => {
     if (hovered) {
@@ -155,7 +130,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
   curve.curveType = "chordal";
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-  newTexture.wrapS = newTexture.wrapT = THREE.RepeatWrapping; 
+  newTexture.wrapS = newTexture.wrapT = THREE.RepeatWrapping;
 
   return (
     <>
@@ -196,7 +171,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial
-                map={newTexture} 
+                map={newTexture}
                 map-anisotropy={16}
                 clearcoat={1}
                 clearcoatRoughness={0.15}

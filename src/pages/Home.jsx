@@ -59,13 +59,12 @@ export const Home = () => {
 
       <br></br>
       <br></br>
-      <div className="rounded-xl h-[80%] w-full xl:w-[60%] md:w-[100%] overflow-hidden flex items-center justify-center z-10 mb-[60px] gradient-border">
+      <div className="rounded-xl h-[60%] w-full xl:w-[60%] md:w-[100%] flex items-center justify-center z-10 mb-[60px] gradient-border">
         <Canvas
           className="rounded-xl"
-          shadows
           camera={{ position: [0, 0, 6], fov: 42 }}
         >
-          <color attach="background" args={["#ececec"]} />
+          <color attach="background" />
           <group position-y={0}>
             <Suspense fallback={null}>
               <Experience />
