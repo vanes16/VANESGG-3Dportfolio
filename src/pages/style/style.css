@@ -338,9 +338,7 @@
 .right-message .chatbox-message-response-image {
   margin: 0 0 0 10px;
 }
-.left-message {
-  flex-direction: row-reverse;
-}
+
 .left-message .chatbox-message-bubble {
   background: #ddd;
   color: #342e37;
