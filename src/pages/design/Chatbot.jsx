@@ -27,11 +27,6 @@ const Chatbot = () => {
   const sendMessage = async (event) => {
     event.preventDefault();
 
-    if (!userInput) {
-      setError("Please enter a message.");
-      return;
-    }
-
     // Add user message
     const newMessage = {
       text: userInput,
@@ -50,7 +45,7 @@ const Chatbot = () => {
         method: "POST",
         headers: {
           Authorization:
-            "Bearer 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",
+            "Bearer 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",
           "HTTP-Referer": "https://www.sitename.com",
           "X-Title": "SiteName",
           "Content-Type": "application/json",
@@ -63,7 +58,8 @@ const Chatbot = () => {
 
       const data = await res.json();
       const markdownText =
-        data.choices?.[0]?.message?.content || "No response received.";
+        data.choices?.[0]?.message?.content ||
+        "The server is busy. Please try again later.";
 
       const botMessage = {
         text: markdownText,
@@ -141,7 +137,7 @@ const Chatbot = () => {
             />
             <button
               type="submit"
-              className="chatbox-message-button bg-[#192841]"
+              className="chatbox-message-button"
               disabled={loading}
             >
               <i className="mr-[20px] fas fa-paper-plane"></i>
