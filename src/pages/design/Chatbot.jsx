@@ -27,6 +27,9 @@ const Chatbot = () => {
   const sendMessage = async (event) => {
     event.preventDefault();
 
+    if (!userInput) {
+      return;
+    }
     // Add user message
     const newMessage = {
       text: userInput,
@@ -95,7 +98,6 @@ const Chatbot = () => {
             </div>
           </div>
         </div>
-
         {/* Display Messages */}
         <main id="chatbox-message-content">
           {messages.map((msg, index) => (
@@ -116,11 +118,26 @@ const Chatbot = () => {
               </div>
             </div>
           ))}
+          {loading && (
+            <div className="chatbox-message-response left-message">
+              <div
+                className="chatbox-message-response-image"
+                style={{ backgroundImage: "url(/images/logos.png)" }}
+              ></div>
+              <div className="chatbox-message-bubble">
+                <div className="chatbox-message-info">
+                  <div className="chatbox-message-info-name">
+                    @DeepSeek R1 API
+                  </div>
+                </div>
+                <div className="chatbox-message-text">
+                  <div class="loader"></div>
+                </div>
+              </div>
+            </div>
+          )}
         </main>
 
-        {loading && (
-          <div className="chatbox-message-loading p-[5px]">Loading...</div>
-        )}
         {error && <div className="chatbox-message-error">{error}</div>}
 
         <div className="chatbox-message-bottom rounded-b-xl">
