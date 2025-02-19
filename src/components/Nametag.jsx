@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
 import {
   useGLTF,
@@ -19,14 +19,6 @@ import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
-const GLTF_PATH = "/nametag/kartu.glb";
-const TEXTURE_PATH = "/nametag/band.jpg";
-const NEW_TEXTURE_PATH = "/nametag/glbtexture.png";
-
-useGLTF.preload(GLTF_PATH);
-useTexture.preload(TEXTURE_PATH);
-useTexture.preload(NEW_TEXTURE_PATH);
-
 export const Nametag = () => {
   return (
     <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
@@ -42,36 +34,53 @@ export const Nametag = () => {
 };
 
 function Band({ maxSpeed = 50, minSpeed = 10 }) {
+  const GLTF_PATH = "/nametag/kartu.glb";
+  const TEXTURE_PATH = "/nametag/band.jpg";
+  const NEW_TEXTURE_PATH = "/nametag/glbtexture.png";
+
+  useGLTF.preload(GLTF_PATH);
+  useTexture.preload(TEXTURE_PATH);
+  useTexture.preload(NEW_TEXTURE_PATH);
+
   const band = useRef(),
     fixed = useRef(),
     j1 = useRef(),
     j2 = useRef(),
     j3 = useRef(),
-    card = useRef(); // prettier-ignore
-  const vec = new THREE.Vector3(),
-    ang = new THREE.Vector3(),
-    rot = new THREE.Vector3(),
-    dir = new THREE.Vector3();
-  const segmentProps = {
-    type: "dynamic",
-    canSleep: true,
-    colliders: false,
-    angularDamping: 4,
-    linearDamping: 4,
-  };
+    card = useRef();
+
+  const vec = useMemo(() => new THREE.Vector3(), []);
+  const ang = useMemo(() => new THREE.Vector3(), []);
+  const rot = useMemo(() => new THREE.Vector3(), []);
+  const dir = useMemo(() => new THREE.Vector3(), []);
+
+  const segmentProps = useMemo(
+    () => ({
+      type: "dynamic",
+      canSleep: true,
+      colliders: false,
+      angularDamping: 4,
+      linearDamping: 4,
+    }),
+    []
+  );
+
   const { nodes, materials } = useGLTF(GLTF_PATH);
   const texture = useTexture(TEXTURE_PATH);
   const newTexture = useTexture(NEW_TEXTURE_PATH);
   const { width, height } = useThree((state) => state.size);
-  const [curve] = useState(
+
+  const curve = useMemo(
     () =>
       new THREE.CatmullRomCurve3([
         new THREE.Vector3(),
         new THREE.Vector3(),
         new THREE.Vector3(),
         new THREE.Vector3(),
-      ])
+      ]),
+    []
   );
+
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
 
@@ -89,6 +98,23 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
       return () => void (document.body.style.cursor = "auto");
     }
   }, [hovered, dragged]);
+
+  const handlePointerUp = useCallback((e) => {
+    e.target.releasePointerCapture(e.pointerId);
+    drag(false);
+  }, []);
+
+  const handlePointerDown = useCallback(
+    (e) => {
+      e.target.setPointerCapture(e.pointerId);
+      drag(
+        new THREE.Vector3()
+          .copy(e.point)
+          .sub(vec.copy(card.current.translation()))
+      );
+    },
+    [vec]
+  );
 
   useFrame((state, delta) => {
     if (dragged) {
@@ -157,17 +183,8 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
-            onPointerUp={(e) => (
-              e.target.releasePointerCapture(e.pointerId), drag(false)
-            )}
-            onPointerDown={(e) => (
-              e.target.setPointerCapture(e.pointerId),
-              drag(
-                new THREE.Vector3()
-                  .copy(e.point)
-                  .sub(vec.copy(card.current.translation()))
-              )
-            )}
+            onPointerUp={handlePointerUp}
+            onPointerDown={handlePointerDown}
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial

@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState, Suspense } from "react";
 import { useGLTF, useFBX, useAnimations } from "@react-three/drei";
 
-// Lazy load the useGLTF and useFBX hooks
 const LazyGLTF = React.lazy(() => import('@react-three/drei').then(module => ({ default: module.useGLTF })));
 const LazyFBX = React.lazy(() => import('@react-three/drei').then(module => ({ default: module.useFBX })));
 
@@ -9,7 +8,6 @@ export function Avatar(props) {
   const [animation, setAnimation] = useState("Idle");
   const group = useRef();
 
-  // Load GLTF and FBX models
   const { nodes, materials } = useGLTF("/models/model.glb");
   const { animations: idleAnimation } = useFBX("/models/Idle.fbx");
   const { animations: greetingAnimation } = useFBX("/models/Greeting.fbx");
