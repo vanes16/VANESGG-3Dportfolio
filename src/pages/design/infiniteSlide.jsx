@@ -1,5 +1,3 @@
-import "../style/style.css";
-
 const InfiniteSlide = () => {
   return (
     <div>

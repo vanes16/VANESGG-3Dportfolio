@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "primaryFont";
-  src: url("/font/Cyberpunk.otf") format("truetype");
+  src: url("/font/EvanstonTavern-1826Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -41,7 +41,7 @@
 
 html,
 body {
-  background: #111827;
+  background: #ff003c;
   margin: 0;
 }
 

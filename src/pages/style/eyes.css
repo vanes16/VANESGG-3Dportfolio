@@ -16,7 +16,7 @@
   position: absolute;
   width: 220px;
   height: 80px;
-  background-color: #111827;
+  background-color: #ff003c;
   z-index: 400;
   top: -120px;
   animation: blink 4.5s infinite ease-in alternate;
@@ -44,7 +44,7 @@
   border-radius: 50%;
   height: 90px;
   width: 90px;
-  background-color: #f3efef;
+  background-color: white;
 }
 .eyes-follow-tired .container .eyes .eye .pupil {
   position: absolute;

@@ -3,9 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useRef } from "react";
 import { BackgroundCircles, Rings } from "./design/homeDesign";
 
-import "./style/style.css";
-import "./style/cyberpunk.css";
-
 export const Home = () => {
   const parallaxRef = useRef(null);
   const openPDF = () => {
@@ -13,10 +10,9 @@ export const Home = () => {
     window.open(pdfUrl, "_blank");
   };
   return (
-    <div className="h-[1400px] w-full px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden">
-      <div className="absolute inset-0 h-[1400px] bg-cover bg-center bg-[url('/images/homeBLUE.jpg')] cyber-glitch-0"></div>
-      <div className="absolute inset-0 bg-black bg-opacity-80 h-[1400px] border-b border-white border-opacity-20"></div>
-      <div className="absolute inset-0 bg-cover bg-center bg-[url('/images/gradient.png')] h-[1700px] w-full opacity-50"></div>
+    <div className="h-[1400px] w-full px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0">
+      <div className="absolute inset-0 h-[1400px] bg-cover bg-center bg-[url('/images/test3.png')] cyber-glitch-0"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-60 h-[1400px]"></div>
 
       <div className="relative w-[300px] md:w-[400px] lg:w-[500px] ">
         <Rings />
@@ -27,13 +23,13 @@ export const Home = () => {
       <br />
       <br />
       <div
-        className="font-primary text-3xl md:text-4xl lg:text-6xl font-black mb-[45px] z-10 text-white"
+        className="font-primary text-4xl md:text-5xl lg:text-6xl font-bold mb-[30px] z-10 text-white"
         style={{ lineHeight: "1.375" }}
       >
         Innovative and Dedicated In
         <br></br> Creating Technological Solutions
       </div>
-      <p className="font-third text-xl md:text-2xl mb-6 text-gray-300 z-10 font-extrabold">
+      <p className="font-third text-xl md:text-2xl mb-6 text-gray-100 z-10 font-extrabold">
         Bring positive attitude and to be a blessing to the <br></br>{" "}
         environment, community, and the world.
       </p>
@@ -42,7 +38,7 @@ export const Home = () => {
         className="font-forth text-3xl font-thin cyber-button bg-red vt-bot fg-white"
       >
         Download CV
-        <span className="glitchtext">&dollar;_glitch;</span>
+        <span className="glitchtext">%Node;Error;</span>
       </button>
 
       <br></br>

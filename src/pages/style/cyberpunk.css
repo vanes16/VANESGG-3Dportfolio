@@ -110,6 +110,10 @@
   --bg: var(--yellow);
   background-color: var(--yellow);
 }
+.bg-whiteG {
+  --bg: #ece8e1;
+  background-color: #ece8e1;
+}
 .ac-yellow {
   --ac: var(--yellow);
 }
@@ -375,6 +379,7 @@
   outline: transparent;
   position: relative;
   border: 0;
+  z-index: 10;
   transition: background 0.2s;
 }
 

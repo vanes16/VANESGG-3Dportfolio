@@ -1,9 +1,13 @@
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { Project } from "./pages/Project";
+import { Highlight } from "./pages/Highlight";
 import { Timeline } from "./pages/Timeline";
 import { Contacts } from "./pages/Contacts";
 import { useEffect, useState, Suspense } from "react";
+import "./pages/style/style.css";
+import "./pages/style/cyberpunk.css";
+import "./pages/style/eyes.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -52,11 +56,13 @@ function App() {
               {/* Project */}
               <Project />
 
+              {/* Highlight */}
+              <Highlight />
+
               {/* Timeline */}
               {/*  <Timeline /> */}
 
               {/* Nametag */}
-              {/* <Contacts /> */}
             </div>
           </>
         )}

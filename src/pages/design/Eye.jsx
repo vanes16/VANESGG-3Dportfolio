@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import "../style/eyes.css";
-
 const Eye = () => {
   const [tiredness, setTiredness] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -21,17 +19,16 @@ const Eye = () => {
   const calculateAngle = (eyeId) => {
     const eyeElement = document.getElementById(eyeId);
     if (!eyeElement) return 0;
-  
+
     const eyeRect = eyeElement.getBoundingClientRect();
     const eyeCenterX = eyeRect.left + eyeRect.width / 2;
     const eyeCenterY = eyeRect.top + eyeRect.height / 2;
-  
+
     const deltaX = mousePosition.x - eyeCenterX;
-    const deltaY = eyeCenterY - mousePosition.y;  // Inverted Y-axis
-  
+    const deltaY = eyeCenterY - mousePosition.y; // Inverted Y-axis
+
     return (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
   };
-  
 
   const angleLeftEye = calculateAngle("left-eye");
   const angleRightEye = calculateAngle("right-eye");
@@ -54,7 +51,7 @@ const Eye = () => {
   };
 
   return (
-    <div className="eyes-follow-tired">
+    <div className="eyes-follow-tired mt-20">
       <div className="container">
         <div className="eyelid" />
         <div className="eyes">
