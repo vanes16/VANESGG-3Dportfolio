@@ -61,7 +61,8 @@ export const Project = () => {
       <Eyes />
 
       <div className="mb-10 relative z-10 justifty-center items-center text-center">
-        <motion.span
+        <motion.h1
+          className="font-primary text-5xl font-bold text-white mt-[-70px]"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -80,10 +81,9 @@ export const Project = () => {
             repeatType: "reverse",
           }}
         >
-          <h1 className="font-primary text-5xl font-bold text-white mt-[-70px]">
-            Technology Enthusiast
-          </h1>
-        </motion.span>
+          {" "}
+          Technology Enthusiast
+        </motion.h1>
         <br />
         <p className="text-2xl text-white text-opacity-[75%] font-secondary text-center mt-[20px]">
           With innovative solutions integrated across the platform,

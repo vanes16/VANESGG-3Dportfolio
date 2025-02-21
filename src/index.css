@@ -6,19 +6,25 @@
 
 @font-face {
   font-family: "primaryFont";
-  src: url("/font/NexaRustSans-Black.otf") format("truetype");
+  src: url("/font/Cyberpunk.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "secondaryFont";
-  src: url("/font/Roboto-Regular.ttf") format("truetype");
+  src: url("/font/BlenderProBook.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "thirdFont";
+  src: url("/font/Oxanium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "forthFont";
   src: url("/font/Tolyer-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;

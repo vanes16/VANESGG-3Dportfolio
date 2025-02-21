@@ -131,7 +131,7 @@ const Chatbot = () => {
                   </div>
                 </div>
                 <div className="chatbox-message-text">
-                  <div class="loader"></div>
+                  <div className="loader"></div>
                 </div>
               </div>
             </div>

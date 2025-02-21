@@ -53,10 +53,10 @@ function App() {
               <Project />
 
               {/* Timeline */}
-              <Timeline />
+              {/*  <Timeline /> */}
 
               {/* Nametag */}
-              <Contacts />
+              {/* <Contacts /> */}
             </div>
           </>
         )}

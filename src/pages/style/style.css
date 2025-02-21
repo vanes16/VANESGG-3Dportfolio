@@ -356,8 +356,58 @@
 .loader:before {
   content: "Loading...";
 }
+
 @keyframes l4 {
   to {
     clip-path: inset(0 -1ch 0 0);
+  }
+}
+
+.cyber-glitch-0 {
+  animation: cyber-glitch-0 5s linear infinite;
+}
+
+@keyframes cyber-glitch-0 {
+  0% {
+    filter: blur(0) brightness(100%) contrast(100%);
+  }
+  2% {
+    filter: blur(0.05rem) brightness(120%) contrast(120%);
+  }
+  4% {
+    filter: blur(0.1rem) brightness(150%) contrast(150%);
+  }
+  6% {
+    filter: blur(0.2rem) brightness(170%) contrast(170%);
+  }
+  8% {
+    filter: blur(0) brightness(100%) contrast(100%);
+  }
+  10% {
+    filter: blur(0) brightness(100%) contrast(100%);
+  }
+  60% {
+    filter: blur(0) brightness(100%) contrast(100%);
+  }
+  62% {
+    filter: blur(0.05rem) brightness(60%) contrast(100%);
+  }
+  64% {
+    filter: blur(0.1rem) brightness(40%) contrast(100%);
+  }
+  66% {
+    filter: blur(0) brightness(100%) contrast(100%);
+  }
+  68% {
+    filter: blur(0.05rem) brightness(60%) contrast(100%);
+  }
+  70% {
+    filter: blur(0.1rem) brightness(40%) contrast(100%);
+  }
+  72% {
+    filter: blur(0) brightness(100%) contrast(100%);
+  }
+  100% {
+    filter: blur(0) brightness(100%) contrast(100%);
   }
 }
