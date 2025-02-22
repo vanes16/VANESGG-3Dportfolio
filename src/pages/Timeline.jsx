@@ -12,8 +12,8 @@ const ExperienceCard = ({ experience }) => {
     <VerticalTimelineElement
       contentStyle={{
         background: "#1f2940",
-        color: "black",
       }}
+      className="text-white lg:text-black"
       contentArrowStyle={{ borderRight: "7px solid #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
@@ -61,10 +61,10 @@ export const Timeline = () => {
     }}>
       <div className="relative">
         <div className="absolute inset-0 h-[80px] bg-cover bg-center bg-[url('/images/Razor-0.png')]"></div>
-        <h1 className="font-secondary text-lg align-left z-10 relative absolute top-[-1px] ml-2 hidden md:block font-code text-white"> <span className="text-[#8976c8]">import</span>
+        <h1 className="font-secondary text-lg align-left z-10 relative absolute top-[-1px] ml-2 hidden lg:block font-code text-white"> <span className="text-[#8976c8]">import</span>
         <span className="text-[#187ab9]">(</span>'./module.jsx'<span className="text-[#187ab9]">)</span>.then<span className="text-[#187ab9]">(</span>mod <span className="text-[#b2b35b]">=></span>
         mod.default<span className="text-[#ffb312]">()</span><span className="text-[#187ab9]">)</span>; </h1>
-        <p className="font-code fg-white text-lg align-left z-10 relative absolute bottom-0 ml-2 hidden md:block"> Loading... </p>
+        <p className="font-code fg-white text-lg align-left z-10 relative absolute bottom-0 ml-2 hidden lg:block"> Loading... </p>
       </div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
