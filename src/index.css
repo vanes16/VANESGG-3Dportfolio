@@ -29,7 +29,12 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: "codeFont";
+  src: url("/font/monocode-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -41,7 +46,7 @@
 
 html,
 body {
-  background: #ff003c;
+  background: #0e1422;
   margin: 0;
 }
 

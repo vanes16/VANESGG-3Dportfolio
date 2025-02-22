@@ -62,10 +62,12 @@ const experiences = [
     iconBg: "#ffffff",
     date: "2024 - 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Annotate images, and text data with at least 95% accuracy, following established guidelines.",
+      "Ensure data quality by cross-checking and refining annotations to maintain consistency and correctness.",
+      "Follow detailed Standard Operating Procedures (SOPs) and labeling frameworks to ensure uniformity.",
+      "Accept feedback from teams and improve annotation quality through training sessions.",
+      "dentify and document ambiguous data points or anomalies in the dataset for further review.",
+      "Share best practices, shortcuts, and efficiency techniques to help the team optimize workflow and improve productivity.",
     ],
   },
 ];

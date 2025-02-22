@@ -16,7 +16,7 @@
   position: absolute;
   width: 220px;
   height: 80px;
-  background-color: #ff003c;
+  background-color: #0e1422;
   z-index: 400;
   top: -120px;
   animation: blink 4.5s infinite ease-in alternate;

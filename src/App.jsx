@@ -60,7 +60,7 @@ function App() {
               <Highlight />
 
               {/* Timeline */}
-              {/*  <Timeline /> */}
+              <Timeline />
 
               {/* Nametag */}
             </div>

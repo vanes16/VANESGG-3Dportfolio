@@ -82,9 +82,9 @@ const Chatbot = () => {
 
   return (
     <div className="w-full max-w-5xl h-[700px] bg-white bg-opacity-[3%] backdrop-blur-sm justify-center items-center flex rounded-t-3xl">
-      <div className="w-full h-full bg-center bg-cover absolute bg-[url('/images/Earth.jpg')] opacity-[3.5%] contrast-200"></div>
-      <div className="z-1 shadow-xl bg-white bg-opacity-[3%] backdrop-blur-lg rounded-3xl p-3 w-full max-w-md text-white">
-        <div className="chatbox-message-header rounded-t-xl border-b">
+      <div className="w-full h-full bg-center bg-cover absolute bg-[url('/images/codingAI.jpeg')] opacity-[3.5%] contrast-200"></div>
+      <div className="z-1 shadow-xl bg-white bg-opacity-[3%] backdrop-blur-2xl p-2 w-full max-w-md text-white">
+        <div className="chatbox-message-header border-b">
           <div className="chatbox-message-profile">
             <img
               src="/images/logos.png"
@@ -139,7 +139,7 @@ const Chatbot = () => {
 
         {error && <div className="chatbox-message-error">{error}</div>}
 
-        <div className="chatbox-message-bottom rounded-b-xl">
+        <div className="chatbox-message-bottom ">
           <form
             onSubmit={sendMessage}
             className="chatbox-message-form text-black"

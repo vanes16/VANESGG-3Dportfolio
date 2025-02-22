@@ -11,7 +11,7 @@ export const Home = () => {
   };
   return (
     <div className="h-[1400px] w-full px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0">
-      <div className="absolute inset-0 h-[1400px] bg-cover bg-center bg-[url('/images/test3.png')] cyber-glitch-0"></div>
+      <div className="absolute inset-0 h-[1400px] bg-cover bg-center bg-[url('/images/backgroundHome.png')] cyber-glitch-0"></div>
       <div className="absolute inset-0 bg-black bg-opacity-60 h-[1400px]"></div>
 
       <div className="relative w-[300px] md:w-[400px] lg:w-[500px] ">

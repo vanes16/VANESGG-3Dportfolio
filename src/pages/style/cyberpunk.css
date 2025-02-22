@@ -218,12 +218,12 @@
 /*#region razor*/
 .cyber-razor-top {
   margin-top: 30px;
-  position: relative;
+
 }
 
 .cyber-razor-bottom {
   margin-bottom: 30px;
-  position: relative;
+
 }
 
 .cyber-razor-top:before {

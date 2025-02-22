@@ -8,6 +8,7 @@ export default {
         secondary: ["secondaryFont", "serif"],
         third: ["thirdFont", "serif"],
         forth: ["forthFont", "serif"],
+        code: ["codeFont", "serif"],
       },
       animation: {
         slideUp: "slideUp 3s ease-out forwards", // Animasi slide up

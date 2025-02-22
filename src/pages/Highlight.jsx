@@ -6,9 +6,9 @@ export const Highlight = () => {
   return (
     <div className="relative flex flex-col items-center justify-center z-0 dot-back">
       <Eyes />
-      <div className="mb-10 relative z-10 justifty-center items-center text-center">
-        <motion.h1
-          className="font-primary text-5xl font-bold text-black mt-[-70px]"
+      <div className="mb-10 relative z-10 justifty-center items-center text-center mt-[-40px]">
+        <motion.span
+          className="font-primary text-[100px] font-bold text-white leading-tight"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -27,10 +27,10 @@ export const Highlight = () => {
             repeatType: "reverse",
           }}
         >
-          Technology Enthusiast
-        </motion.h1>
+          <h1>Technology Enthusiast</h1>
+        </motion.span>
         <br />
-        <p className="text-2xl font-black text-normal font-forth text-center mt-[20px]">
+        <p className="text-3xl font-bold text-white font-secondary mt-[-80px]">
           With innovative solutions integrated across the platform,
           <br />
           you can streamline processes, enhance efficiency, and make <br />a
