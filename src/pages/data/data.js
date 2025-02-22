@@ -66,7 +66,7 @@ const experiences = [
       "Ensure data quality by cross-checking and refining annotations to maintain consistency and correctness.",
       "Follow detailed Standard Operating Procedures (SOPs) and labeling frameworks to ensure uniformity.",
       "Accept feedback from teams and improve annotation quality through training sessions.",
-      "dentify and document ambiguous data points or anomalies in the dataset for further review.",
+      "Identify and document ambiguous data points or anomalies in the dataset for further review.",
       "Share best practices, shortcuts, and efficiency techniques to help the team optimize workflow and improve productivity.",
     ],
   },
