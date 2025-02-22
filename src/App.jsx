@@ -5,36 +5,34 @@ import { Highlight } from "./pages/Highlight";
 import { Timeline } from "./pages/Timeline";
 import { Contacts } from "./pages/Contacts";
 import { useEffect, useState, Suspense } from "react";
+import { useProgress } from "@react-three/drei";
+
 import "./pages/style/style.css";
 import "./pages/style/cyberpunk.css";
 import "./pages/style/eyes.css";
 
 function App() {
+  const { progress } = useProgress();
   const [loading, setLoading] = useState(true);
   const [hideLoading, setHideLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      // Mulai animasi keluar
+    if (progress === 100) {
       setHideLoading(true);
-
       setTimeout(() => {
         setLoading(false);
       }, 500);
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, []);
+    }
+  }, [progress]);
 
   return (
     <>
-      {/* Suspense untuk mulai load Experience */}
-      <Suspense fallback={null}>
+      <Suspense fallback={<div className="loading-screen">Loading...</div>}>
         {/* Loading Screen */}
         {loading && (
           <div
             className={`absolute inset-0 bg-[#111827] z-50 flex items-center justify-center duration-500 ${
-              hideLoading ? "hideLoading" : ""
+              hideLoading ? "opacity-0" : ""
             }`}
           >
             <img
@@ -42,6 +40,7 @@ function App() {
               className="w-60 animate-pulse"
               alt="Loading Logo"
             />
+            <p className="text-white mt-4">{progress.toFixed(0)}%</p>
           </div>
         )}
 
@@ -50,19 +49,11 @@ function App() {
           <>
             <Header />
             <div className="flex flex-col h-full w-[100%]">
-              {/* Home */}
               <Home />
-
-              {/* Project */}
               <Project />
-
-              {/* Highlight */}
               <Highlight />
-
-              {/* Timeline */}
               <Timeline />
-
-              {/* Nametag */}
+              <Contacts />
             </div>
           </>
         )}

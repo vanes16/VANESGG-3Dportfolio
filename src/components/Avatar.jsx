@@ -1,8 +1,12 @@
 import React, { useRef, useEffect, useState, Suspense } from "react";
 import { useGLTF, useFBX, useAnimations } from "@react-three/drei";
 
-const LazyGLTF = React.lazy(() => import('@react-three/drei').then(module => ({ default: module.useGLTF })));
-const LazyFBX = React.lazy(() => import('@react-three/drei').then(module => ({ default: module.useFBX })));
+const LazyGLTF = React.lazy(() =>
+  import("@react-three/drei").then((module) => ({ default: module.useGLTF }))
+);
+const LazyFBX = React.lazy(() =>
+  import("@react-three/drei").then((module) => ({ default: module.useFBX }))
+);
 
 export function Avatar(props) {
   const [animation, setAnimation] = useState("Idle");
@@ -15,7 +19,10 @@ export function Avatar(props) {
   idleAnimation[0].name = "Idle";
   greetingAnimation[0].name = "Greeting";
 
-  const { actions } = useAnimations([idleAnimation[0], greetingAnimation[0]], group);
+  const { actions } = useAnimations(
+    [idleAnimation[0], greetingAnimation[0]],
+    group
+  );
 
   useEffect(() => {
     if (actions[animation]) {
@@ -102,5 +109,3 @@ export function Avatar(props) {
     </Suspense>
   );
 }
-
-useGLTF.preload("/models/model.glb");

@@ -38,7 +38,6 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const TEXTURE_PATH = "/nametag/band.jpg";
   const NEW_TEXTURE_PATH = "/nametag/glbtexture.png";
 
-  useGLTF.preload(GLTF_PATH);
   useTexture.preload(TEXTURE_PATH);
   useTexture.preload(NEW_TEXTURE_PATH);
 

@@ -20,7 +20,7 @@ const ProjectContent = () => {
       </div>
 
       {/* Other News Items */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 cyber-glitch-2">
         {[
           {
             src: "https://storage.googleapis.com/a1aa/image/eqqKK7iFj3Mt3va89jt1CvKZCFRfnELGGxI4ztJzGlI.jpg",
