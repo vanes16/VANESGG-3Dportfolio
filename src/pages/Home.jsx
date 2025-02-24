@@ -14,7 +14,7 @@ export const Home = () => {
       <div className="absolute inset-0 h-[1400px] bg-cover bg-center bg-[url('/images/backgroundHome.png')] cyber-glitch-0"></div>
       <div className="absolute inset-0 bg-black bg-opacity-60 h-[1400px]"></div>
 
-      <div className="relative w-[300px] md:w-[400px] lg:w-[500px] ">
+      <div className="relative w-[300px] md:w-[400px] lg:w-[500px]">
         <Rings />
       </div>
       <div ref={parallaxRef}>

@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 
 export const Highlight = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center z-0 dot-back">
+    <div className="relative flex flex-col items-center justify-center w-full overflow-hidden">
       <Eyes />
-      <div className="absolute top-[100px] right-[400px] w-3 h-3 opacity-80 origin-bottom rotate-[5deg] -ml-3 -mt-3 bg-cyan blur-lg"></div>
-      <div className="absolute top-[350px] left-[350px] w-2 h-2 opacity-80 origin-bottom rotate-[0deg] -ml-3 -mt-3 bg-cyan blur-lg"></div>
-      <div className="absolute top-[340px] right-[300px] w-2 h-2 opacity-80 origin-bottom rotate-[0deg] -ml-3 -mt-3 bg-cyan blur-sm"></div>
-      <div className="absolute top-[600px] left-[600px] w-2 h-2 opacity-80 origin-bottom rotate-[-5deg] -ml-3 -mt-3 bg-cyan blur-sm"></div>
-      <div className="absolute top-[100px] left-[400px] w-3 h-3 opacity-80 origin-bottom rotate-[-5deg] -ml-3 -mt-3 bg-cyan blur-sm"></div>
+      <div className="relative w-full">
+        <div className="absolute top-[-200px] right-[400px] w-3 h-3 opacity-80 origin-bottom rotate-[5deg] bg-cyan blur-lg"></div>
+        <div className="absolute top-[50px] left-[350px] w-2 h-2 opacity-80 origin-bottom rotate-[0deg] bg-cyan blur-lg"></div>
+        <div className="absolute top-[40px] right-[300px] w-2 h-2 opacity-80 origin-bottom rotate-[0deg] bg-cyan blur-sm"></div>
+        <div className="absolute top-[300px] left-[600px] w-2 h-2 opacity-80 origin-bottom rotate-[-5deg] bg-cyan blur-sm"></div>
+        <div className="absolute top-[-150px] left-[400px] w-3 h-3 opacity-80 origin-bottom rotate-[-5deg] bg-cyan blur-sm"></div>
+      </div>
       <div className="mb-10 relative z-10 justifty-center items-center text-center mt-[-80px]">
         <motion.span
           className="font-primary text-[100px] font-bold text-white leading-tight will-change-transform"
