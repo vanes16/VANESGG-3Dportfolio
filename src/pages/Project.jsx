@@ -26,10 +26,10 @@ export const Project = () => {
     >
       <div className="cyber-razor-top bg-red w-full absolute top-[-57px] h-[40px]"></div>
       <div className="cyber-razor-top bg-cyan w-full absolute top-[-54px] h-[40px]"></div>
-      <div className="cyber-razor-top bg-whiteG w-full absolute top-[-50px] h-[40px] dot-back"></div>
-      <div className="cyber-razor-bottom bg-red w-full absolute bottom-[-57px] h-[20px] dot-back"></div>
-      <div className="cyber-razor-bottom bg-cyan w-full absolute bottom-[-54px] h-[20px] dot-back"></div>
-      <div className="cyber-razor-bottom bg-whiteG w-full absolute bottom-[-50px] h-[20px] dot-back"></div>
+      <div className="cyber-razor-top bg-whiteG w-full absolute top-[-50px] h-[40px]"></div>
+      <div className="cyber-razor-bottom bg-red w-full absolute bottom-[-57px] h-[20px]"></div>
+      <div className="cyber-razor-bottom bg-cyan w-full absolute bottom-[-54px] h-[20px]"></div>
+      <div className="cyber-razor-bottom bg-whiteG w-full absolute bottom-[-50px] h-[20px]"></div>
       {/* Content */}
       <div className="bg-transparent p-2 flex flex-wrap justify-center lg:justify-around text-black mb-10 w-full lg:w-[50%] sm:w-[60%] rounded-[48px] border border-gray-400 relative z-10">
         <Button label="Code" isActive />

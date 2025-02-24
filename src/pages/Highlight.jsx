@@ -6,8 +6,13 @@ export const Highlight = () => {
   return (
     <div className="relative flex flex-col items-center justify-center z-0 dot-back">
       <Eyes />
-      <div className="mb-10 relative z-10 justifty-center items-center text-center mt-[-100px]">
-        <motion.h1
+      <div className="absolute top-[100px] right-[400px] w-3 h-3 opacity-80 origin-bottom rotate-[5deg] -ml-3 -mt-3 bg-cyan blur-lg"></div>
+      <div className="absolute top-[350px] left-[350px] w-2 h-2 opacity-80 origin-bottom rotate-[0deg] -ml-3 -mt-3 bg-cyan blur-lg"></div>
+      <div className="absolute top-[340px] right-[300px] w-2 h-2 opacity-80 origin-bottom rotate-[0deg] -ml-3 -mt-3 bg-cyan blur-sm"></div>
+      <div className="absolute top-[600px] left-[600px] w-2 h-2 opacity-80 origin-bottom rotate-[-5deg] -ml-3 -mt-3 bg-cyan blur-sm"></div>
+      <div className="absolute top-[100px] left-[400px] w-3 h-3 opacity-80 origin-bottom rotate-[-5deg] -ml-3 -mt-3 bg-cyan blur-sm"></div>
+      <div className="mb-10 relative z-10 justifty-center items-center text-center mt-[-80px]">
+        <motion.span
           className="font-primary text-[100px] font-bold text-white leading-tight will-change-transform"
           initial={{ opacity: 0 }}
           animate={{
@@ -28,9 +33,9 @@ export const Highlight = () => {
           }}
         >
           Technology Enthusiast
-        </motion.h1>
+        </motion.span>
         <br />
-        <p className="text-3xl font-bold text-white font-secondary">
+        <p className="text-3xl font-bold text-white font-secondary mt-7">
           With innovative solutions integrated across the platform,
           <br />
           you can streamline processes, enhance efficiency, and make <br />a

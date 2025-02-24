@@ -113,6 +113,10 @@
 .bg-whiteG {
   --bg: #ece8e1;
   background-color: #ece8e1;
+} 
+.bg-whiteG1 {
+  --bg: #f2f0ea;
+  background-color: #f2f0ea;
 }
 .ac-yellow {
   --ac: var(--yellow);

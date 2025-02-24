@@ -6,6 +6,7 @@ import {
   useTexture,
   Environment,
   Lightformer,
+  Text,
 } from "@react-three/drei";
 import {
   BallCollider,

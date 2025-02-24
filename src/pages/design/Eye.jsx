@@ -71,6 +71,7 @@ const Eye = () => {
           step="0.001"
           value={tiredness}
           onChange={(ev) => setTiredness(parseFloat(ev.target.value))}
+          className="accent-cyan-500"
         />
       </div>
     </div>

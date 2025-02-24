@@ -13,7 +13,7 @@ const ExperienceCard = ({ experience }) => {
       contentStyle={{
         background: "#1f2940",
       }}
-      className="text-white lg:text-black"
+      className="text-white lg:text-black transition-transform duration-300 hover:scale-105 "
       contentArrowStyle={{ borderRight: "7px solid #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
@@ -52,7 +52,7 @@ const ExperienceCard = ({ experience }) => {
 };
 export const Timeline = () => {
   return (
-    <div className="relative w-full"
+    <div className="relative w-full mb-10"
     style={{
       backgroundColor: "#f2f0ea",
       backgroundImage:

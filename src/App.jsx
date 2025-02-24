@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={<div className="loading-screen">Loading...</div>}>
+      <Suspense fallback={<div className="loading-screen"></div>}>
         {/* Loading Screen */}
         {loading && (
           <div
