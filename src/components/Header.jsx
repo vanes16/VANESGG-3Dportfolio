@@ -234,7 +234,9 @@ export const Header = () => {
           style={{ paddingBottom: "8rem" }}
         >
           <MenuButton label="Home" to="Home" />
-          <MenuButton label="About" to="About" />
+          <MenuButton label="Project" to="Project" />
+          <MenuButton label="Timeline" to="Timeline" />
+          <MenuButton label="Contact" to="Contact" />
         </div>
         <div className="absolute bottom-10 w-full flex flex-col items-center">
           <div className="flex space-x-6">

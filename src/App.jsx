@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
 import { Project } from "./pages/Project";
 import { Highlight } from "./pages/Highlight";
@@ -54,6 +55,7 @@ function App() {
               <Highlight />
               <Timeline />
               <Contacts />
+              <Footer />
             </div>
           </>
         )}
