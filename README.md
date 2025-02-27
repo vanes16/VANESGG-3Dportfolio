@@ -1,4 +1,4 @@
-### VANES Three JS - Portfolio
+### VANES - Portfolio
 
 ### Built With
 
