@@ -13,7 +13,7 @@ export const Highlight = () => {
         <div className="absolute top-[300px] left-[600px] w-2 h-2 opacity-80 origin-bottom rotate-[-5deg] bg-cyan blur-sm"></div>
         <div className="absolute top-[-150px] left-[400px] w-3 h-3 opacity-80 origin-bottom rotate-[-5deg] bg-cyan blur-sm"></div>
       </div>
-      <div className="mb-10 relative z-10 justifty-center items-center text-center mt-[-80px]">
+      <div className="mb-10 relative justifty-center items-center text-center mt-[-80px]">
         <motion.span
           className="font-primary text-[100px] font-bold text-white leading-tight will-change-transform"
           initial={{ opacity: 0 }}

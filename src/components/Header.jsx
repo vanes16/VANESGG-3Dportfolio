@@ -262,6 +262,13 @@ export const Header = () => {
               <i className="fab fa-linkedin"></i>
             </a>
             <a
+              href="https://www.fiverr.com/vanesgg?source=gig_page"
+              className="text-3xl text-gray-500 hover:text-white transition-colors duration-300 pointer-events-auto"
+              style={{ cursor: "pointer" }}
+            >
+              <i className="fas fa-briefcase"></i>
+            </a>
+            <a
               href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=vanesliu23@gmail.com"
               className="text-3xl text-gray-500 hover:text-white transition-colors duration-300 pointer-events-auto"
               style={{ cursor: "pointer" }}

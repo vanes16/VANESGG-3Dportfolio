@@ -54,7 +54,7 @@ const ExperienceCard = ({ experience }) => {
 };
 export const Timeline = () => {
   return (
-    <div
+    <div id="Timeline"
       className="relative w-full mb-10"
       style={{
         backgroundColor: "#f2f0ea",
