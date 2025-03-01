@@ -31,17 +31,20 @@ export const Footer = () => {
             <i className="text-2xl fas fa-envelope"></i>
           </a>
         </div>
-        <div className="font-third mb-1 mt-4 mr-12 ml-12 text-gray-800">
+        <div className="font-third mb-1 mt-4 mr-[160px] ml-[160px] text-gray-800">
           This site is created to share experiences, knowledge, and creations. I
           believe that every small step leads to a big change. If you have any
           questions, want to collaborate, or simply share your story, feel free
           to reach out. Let's keep learning, growing, and inspiring each other!
           <br></br>
         </div>
-        <div className="border-t border-[#ff003c] mt-2 mb-2 mr-12 ml-12"></div>
-        <span className="text-black mb-10">
-          © 2025 Vanes, All right reserved.
-        </span>
+        <div className="border-t border-[#ff003c] mt-2 mb-2 mr-[160px] ml-[160px]"></div>
+        <div className="flex justify-center items-center h-[50px]">
+          <span className="text-black text-center">
+            © 2025 Vanes, This content is open for future reference and
+            inspiration.
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -10,7 +10,10 @@ export const Home = () => {
     window.open(pdfUrl, "_blank");
   };
   return (
-    <div id="Home" className="h-[1400px] w-full px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0">
+    <div
+      id="Home"
+      className="h-[1400px] w-full px-[60px] mb-2 flex flex-col items-center justify-center text-center overflow-hidden z-0"
+    >
       <div className="absolute inset-0 h-[1400px] bg-cover bg-center bg-[url('/images/backgroundHome.png')] cyber-glitch-0"></div>
       <div className="absolute inset-0 bg-black bg-opacity-60 h-[1400px]"></div>
 
@@ -40,7 +43,6 @@ export const Home = () => {
         Download CV
         <span className="glitchtext">%Node;Error;</span>
       </button>
-
       <br></br>
       <br></br>
       <div className="h-[60%] w-full xl:w-[60%] md:w-[100%] flex items-center justify-center z-5 mb-[60px] gradient-border">

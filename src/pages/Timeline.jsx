@@ -54,7 +54,8 @@ const ExperienceCard = ({ experience }) => {
 };
 export const Timeline = () => {
   return (
-    <div id="Timeline"
+    <div
+      id="Timeline"
       className="relative w-full mb-10"
       style={{
         backgroundColor: "#f2f0ea",
@@ -65,7 +66,7 @@ export const Timeline = () => {
     >
       <div className="relative">
         <div className="absolute inset-0 h-[80px] bg-cover bg-center bg-[url('/images/Razor-0.png')]"></div>
-        <h1 className="font-secondary text-lg align-left z-10 relative absolute top-[-1px] ml-2 hidden lg:block font-code text-white">
+        <h1 className="font-secondary text-lg align-left relative absolute top-[-1px] ml-2 hidden lg:block font-code text-white">
           {" "}
           <span className="text-[#8976c8]">import</span>
           <span className="text-[#187ab9]">(</span>'./module.jsx'
@@ -75,7 +76,7 @@ export const Timeline = () => {
           mod.default<span className="text-[#ffb312]">()</span>
           <span className="text-[#187ab9]">)</span>;{" "}
         </h1>
-        <p className="font-code fg-white text-lg align-left z-10 relative absolute bottom-0 ml-2 hidden lg:block">
+        <p className="font-code fg-white text-lg align-left relative absolute bottom-0 ml-2 hidden lg:block">
           Loading...{" "}
         </p>
       </div>

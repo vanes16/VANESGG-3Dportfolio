@@ -1,20 +1,23 @@
 import { Link } from "react-scroll";
 import { useEffect, useRef, useState } from "react";
+import { useSound } from "./SoundContext"; // Import Context API
 
 let lastScrollY = 0;
 
 export const Header = () => {
-  const [isMuted, setIsMuted] = useState(true);
+  const { isMuted, setIsMuted } = useSound();
   const [isFixed, setIsFixed] = useState(false);
   const [beforeHamburger, afterHamburger] = useState(true);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [showWaveAnimation, setShowWaveAnimation] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const [isAnimating, setIsAnimating] = useState(false);
+
   const audioRef = useRef(null);
   const hamburgerAudioBefore = useRef(null);
   const hamburgerAudioAfter = useRef(null);
   const linkAudio = useRef(null);
   const waveAudio = useRef(null);
-  const [activeSection, setActiveSection] = useState("");
 
   const toggleSound = () => {
     setIsMuted((prevState) => {
@@ -92,7 +95,6 @@ export const Header = () => {
       </button>
     );
   };
-  const [isAnimating, setIsAnimating] = useState(false);
   const MenuButton = ({ label, to }) => {
     const linkClick = () => {
       if (!isMuted) {

@@ -1,14 +1,9 @@
 import React, { useRef, useEffect, useState, Suspense } from "react";
 import { useGLTF, useFBX, useAnimations } from "@react-three/drei";
-
-const LazyGLTF = React.lazy(() =>
-  import("@react-three/drei").then((module) => ({ default: module.useGLTF }))
-);
-const LazyFBX = React.lazy(() =>
-  import("@react-three/drei").then((module) => ({ default: module.useFBX }))
-);
+import { useSound } from "./SoundContext"; // Import Context API
 
 export function Avatar(props) {
+  const { isMuted } = useSound();
   const [animation, setAnimation] = useState("Idle");
   const group = useRef();
 
@@ -37,12 +32,16 @@ export function Avatar(props) {
   }, [animation, actions]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimation((prev) => (prev === "Idle" ? "Greeting" : "Idle"));
-    }, 5000); // Change animation every 5 seconds
+    let timeout;
+    if (!isMuted) {
+      setAnimation("Greeting");
+      timeout = setTimeout(() => {
+        setAnimation("Idle");
+      }, 3000);
+    }
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [isMuted]);
 
   return (
     <Suspense fallback={<div>Loading model...</div>}>

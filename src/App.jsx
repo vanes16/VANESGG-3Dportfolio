@@ -1,5 +1,6 @@
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { SoundProvider } from "./components/SoundContext";
 import { Home } from "./pages/Home";
 import { Project } from "./pages/Project";
 import { Highlight } from "./pages/Highlight";
@@ -41,13 +42,14 @@ function App() {
               className="w-60 animate-pulse"
               alt="Loading Logo"
             />
-            <p className="text-white mt-4">{progress.toFixed(0)}%</p>
+            {/* <p className="text-white mt-4">{progress.toFixed(0)}%</p> */}
           </div>
         )}
 
         {/* Main Application */}
         {!loading && (
           <>
+            <SoundProvider>
             <Header />
             <div className="flex flex-col h-full w-[100%]">
               <Home />
@@ -57,6 +59,7 @@ function App() {
               <Contacts />
               <Footer />
             </div>
+            </SoundProvider>
           </>
         )}
       </Suspense>
