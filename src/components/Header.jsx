@@ -285,7 +285,7 @@ export const Header = () => {
 
       {/* Animasi */}
       {showWaveAnimation && (
-        <div className="flex flex-col w-full bg-transparent justify-between transition-transform duration-700 transform animate-slideUp">
+        <div className="flex flex-col w-full bg-transparent transition-transform duration-1000 animate-slideUp">
           <img src="/images/waveUp.svg" className="w-full" />
           <div className="bg-[#34d2f0] w-full h-[3000px]"></div>
           <img src="/images/waveDown.svg" className="w-full" />
@@ -293,7 +293,7 @@ export const Header = () => {
       )}
 
       {/* Audio Elements */}
-      <audio ref={audioRef} src="./sound/soundButton.mp3" />
+      <audio ref={audioRef} src="./sound/introduction.mp3" />
       <audio ref={hamburgerAudioBefore} src="./sound/afterHamburger.mp3" />
       <audio ref={hamburgerAudioAfter} src="./sound/beforeHamburger.mp3" />
       <audio ref={linkAudio} src="./sound/linkClick.mp3" />
