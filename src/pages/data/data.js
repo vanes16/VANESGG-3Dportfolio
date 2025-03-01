@@ -60,7 +60,7 @@ const experiences = [
     company_name: "Thooth AI",
     icon: "../timeline/thoothai.jpg",
     iconBg: "#ffffff",
-    date: "2024 - 2025",
+    date: "2024 - Now",
     points: [
       "Annotate images, and text data with at least 95% accuracy, following established guidelines.",
       "Ensure data quality by cross-checking and refining annotations to maintain consistency and correctness.",
