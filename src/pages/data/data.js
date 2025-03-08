@@ -56,7 +56,7 @@ const experiences = [
     ],
   },
   {
-    title: "Data Annotator",
+    title: "Machine Learning Annotator",
     company_name: "Thooth AI",
     icon: "../timeline/thoothai.jpg",
     iconBg: "#ffffff",
