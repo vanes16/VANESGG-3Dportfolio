@@ -35,7 +35,7 @@
 
 .slider .list {
   display: flex;
-  width: calc(150px * var(--quantity));
+  width: calc(200px * var(--quantity));
   position: relative;
 }
 
