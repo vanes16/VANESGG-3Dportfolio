@@ -27,7 +27,7 @@ const experiences = [
     company_name: "Bank Central Asia",
     icon: "../timeline/bca.png",
     iconBg: "#ffffff",
-    date: "2022-2023",
+    date: "2022 - 2023",
     points: [
       "Collaborate with B2B and UAT teams in designing Macro applications for User.",
       "Create requirement of converter program from user.",
@@ -62,7 +62,7 @@ const experiences = [
     iconBg: "#ffffff",
     date: "2024 - Now",
     points: [
-      "Annotate images, and text data with at least 95% accuracy, following established guidelines.",
+      "Annotate images, and text data with at least 95% accuracy, especially the TikTok e-commerce project related to image quality and search ads, and following established guidelines.",
       "Ensure data quality by cross-checking and refining annotations to maintain consistency and correctness.",
       "Follow detailed Standard Operating Procedures (SOPs) and labeling frameworks to ensure uniformity.",
       "Accept feedback from teams and improve annotation quality through training sessions.",
