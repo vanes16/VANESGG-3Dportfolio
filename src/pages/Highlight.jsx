@@ -15,7 +15,7 @@ export const Highlight = () => {
       </div>
       <div className="mb-10 relative justifty-center items-center text-center mt-[-80px]">
         <motion.span
-          className="font-primary text-[4xl] sm:text-[5xl] md:text-[6xl] lg:text-[7xl] font-bold text-white leading-tight will-change-transform"
+          className="font-primary text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight will-change-transform"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -37,7 +37,7 @@ export const Highlight = () => {
           Technology Enthusiast
         </motion.span>
         <br />
-        <p className="text-3xl font-bold text-white font-secondary mt-7">
+        <p className="text-xl md:text-2xl font-bold text-white font-secondary mt-7">
           With innovative solutions integrated across the platform,
           <br />
           you can streamline processes, enhance efficiency, and make <br />a
