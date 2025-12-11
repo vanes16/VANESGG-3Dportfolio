@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const Highlight = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center w-full overflow-hidden px-[60px]">
+    <div className="relative flex flex-col items-center justify-center w-full overflow-hidden]">
       <Eyes />
       <div className="relative w-full">
         <div className="absolute top-[-200px] right-[400px] w-3 h-3 opacity-80 origin-bottom rotate-[5deg] bg-cyan blur-lg"></div>
@@ -15,7 +15,7 @@ export const Highlight = () => {
       </div>
       <div className="mb-10 relative justifty-center items-center text-center mt-[-80px]">
         <motion.span
-          className="font-primary text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight will-change-transform"
+          className="px-[60px] font-primary text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight will-change-transform"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -37,7 +37,7 @@ export const Highlight = () => {
           Technology Enthusiast
         </motion.span>
         <br />
-        <p className="text-xl md:text-2xl font-bold text-white font-secondary mt-7">
+        <p className="px-[60px] text-xl md:text-2xl font-bold text-white font-secondary mt-7">
           With innovative solutions integrated across the platform,
           <br />
           you can streamline processes, enhance efficiency, and make <br />a
