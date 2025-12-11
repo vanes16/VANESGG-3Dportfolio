@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const Highlight = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center w-full overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center w-full overflow-hidden px-[60px]">
       <Eyes />
       <div className="relative w-full">
         <div className="absolute top-[-200px] right-[400px] w-3 h-3 opacity-80 origin-bottom rotate-[5deg] bg-cyan blur-lg"></div>
