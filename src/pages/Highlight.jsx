@@ -15,7 +15,7 @@ export const Highlight = () => {
       </div>
       <div className="mb-10 relative justifty-center items-center text-center mt-[-80px]">
         <motion.span
-          className="font-primary text-[100px] font-bold text-white leading-tight will-change-transform"
+          className="font-primary text-[4xl] sm:text-[5xl] md:text-[6xl] lg:text-[7xl] font-bold text-white leading-tight will-change-transform"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
