@@ -26,13 +26,13 @@ export const Home = () => {
       <br />
       <br />
       <div
-        className="font-primary text-4xl md:text-5xl lg:text-6xl font-bold mb-[30px] z-10 text-white"
+        className="font-primary text-5xl md:text-6xl lg:text-7xl font-bold mb-[30px] z-10 text-white"
         style={{ lineHeight: "1.375" }}
       >
         Innovative and Dedicated In
         <br></br> Creating Technological Solutions
       </div>
-      <p className="font-third text-xl md:text-2xl mb-6 text-gray-100 z-10 font-extrabold">
+      <p className="font-third text-2xl md:text-3xl mb-6 text-gray-100 z-10 font-extrabold">
         Bring positive attitude and to be a blessing to the <br></br>{" "}
         environment, community, and the world.
       </p>
