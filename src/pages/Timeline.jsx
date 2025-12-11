@@ -89,10 +89,10 @@ export const Timeline = () => {
           delay: 0.1,
         }}
       >
-        <h3 className="font-primary text-gray-600 text-4xl text-center mb-[-30px] mt-20 lg:mt-5 ">
+        <h3 className="font-primary text-gray-600 text-2xl md:text-3xl text-center mb-[-30px] mt-20 lg:mt-5 ">
           What I Have Done
         </h3>
-        <h1 className="font-primary text-[100px] font-extrabold text-[#0f1923] mb-10 sm:mb-10 text-center">
+        <h1 className="font-primary text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0f1923] mb-10 sm:mb-10 text-center">
           TIMELINE.
         </h1>
       </motion.div>
